@@ -18,7 +18,7 @@
             <h1 class="text-white mb-n2">BRILLIANT WEDDING</h1>
         </a>
         <div class="navbar-nav ml-auto py-0">
-            <a href="home.jsp" class="nav-item nav-link active text-center">Trang chủ</a>
+            <a href="home.jsp" class="nav-item nav-link  text-center">Trang chủ</a>
             <a href="about.jsp" class="nav-item nav-link text-center">Về chúng tôi</a>
             <a href="story.jsp" class="nav-item nav-link text-center">Dịch vụ & sản phẩm</a>
             <a href="galery.jsp" class="nav-item nav-link text-center">Đặt lịch</a>

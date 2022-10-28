@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27493196-3d7a-4982-a8ff-649420c129b9" name="Changes" comment="" />
+    <list default="true" id="27493196-3d7a-4982-a8ff-649420c129b9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/navbar.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +24,9 @@
         <option value="Jsp File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -52,9 +58,9 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Tai lieu/Nam 3/SWP/Wedding_Project2/src/main/webapp&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -63,7 +69,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 8.5.831" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.831" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 89" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.831" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Wedding_Project2:war exploded">
           <settings>
@@ -73,6 +79,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="bc87d415-19d7-489a-a09a-e9f7bf841463" />
+        <option name="HTTP_PORT" value="9090" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -161,10 +168,26 @@
       <workItem from="1666688199338" duration="3690000" />
       <workItem from="1666703068656" duration="2681000" />
       <workItem from="1666788453183" duration="2650000" />
+      <workItem from="1666795071505" duration="481000" />
+      <workItem from="1666849934622" duration="186000" />
+      <workItem from="1666852189546" duration="49000" />
+      <workItem from="1666859821139" duration="143000" />
+      <workItem from="1666959787968" duration="680000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

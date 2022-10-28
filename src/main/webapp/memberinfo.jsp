@@ -29,7 +29,6 @@
                                 <td>Password</td>
                                 <td>Fullname</td>
                                 <td>Role</td>
-                                <td>Status</td>
                                 <td colspan="2">Action</td>
                             </tr>
                             </thead>

@@ -8,7 +8,7 @@
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
 <!-- Navbar Start -->
-        <jsp:include page="view/navbar.jsp"/>
+    <jsp:include page="view/navbar.jsp"/>
 <!-- Navbar End -->
 <!-- Carousel Start -->
     <jsp:include page="view/carousel.jsp"/>

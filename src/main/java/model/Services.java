@@ -24,6 +24,10 @@ public class Services {
         this.status = status;
     }
 
+    public Services(String productID) {
+
+    }
+
     public String getProductID() {
         return productID;
     }

@@ -1,14 +1,26 @@
 package model;
 
+import java.util.Date;
+
 public class Feedback {
     private String idFeedback;
     private int ratingStar;
     private String comments;
+    private Date createAt;
 
-    public Feedback(String idFeedback, int ratingStar, String comments) {
+    public Feedback(String idFeedback, int ratingStar, String comments, Date createAt) {
         this.idFeedback = idFeedback;
         this.ratingStar = ratingStar;
         this.comments = comments;
+        this.createAt = createAt;
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
     }
 
     public Feedback() {

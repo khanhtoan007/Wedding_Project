@@ -11,5 +11,6 @@
 <a href="hello-servlet">Hello Servlet</a>
 <a href="home.jsp">Homepage</a>
 <a href="adminManageCustomer.jsp">Admin page 1</a>
+<a href="adminViewStaffDetail.jsp">Staff detail</a>
 </body>
 </html>

@@ -14,6 +14,9 @@ public class Account {
     public Account() {
     }
 
+    public Account(String name) {
+    }
+
     public String getUsername() {
         return username;
     }

@@ -21,7 +21,7 @@
             <a href="home.jsp" class="nav-item nav-link active text-center">Trang chủ</a>
             <a href="about.jsp" class="nav-item nav-link text-center">Về chúng tôi</a>
             <a href="services.jsp" class="nav-item nav-link text-center">Dịch vụ & sản phẩm</a>
-            <a href="galery.jsp" class="nav-item nav-link text-center">Đặt lịch</a>
+            <a href="contact.jsp" class="nav-item nav-link text-center">Đặt lịch</a>
             <a href="memberinfo.jsp" class="nav-item nav-link text-center">Thông tin cá nhân</a>
         </div>
     </div>

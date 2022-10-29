@@ -17,6 +17,10 @@ public class Customer extends Account {
     public Customer() {
     }
 
+    public Customer(String name) {
+        super(name);
+    }
+
     public String getEmail() {
         return email;
     }

@@ -42,15 +42,11 @@
 </nav>
 <div class="container">
     <div class="col-md-12 text-center mb-3">
-        <h2>Danh sách người dùng</h2>
+        <h2>Danh sách nhân viên</h2>
     </div>
-    <%--    <div class="col-md-12 text-center mb-3">--%>
-    <%--        <button type="button" class="btn btn-dark">Người dùng</button>--%>
-    <%--        <button type="button" class="btn btn-dark">Nhân viên</button>--%>
-    <%--    </div>--%>
     <div class="row justify-content-center align-items-center">
         <form class="form-inline">
-            <input class="form-control" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">
+            <input class="form-control" type="search" placeholder="Điền vào tên nhân viên.." aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>

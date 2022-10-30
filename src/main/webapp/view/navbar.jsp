@@ -51,8 +51,7 @@
                         <div class="col-sm-auto">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox">
-                                <label class="form-check-label"> Remember me
-                                </label>
+                                <label class="form-check-label"> Remember me</label>
                             </div>
                         </div>
                     </div>

@@ -23,10 +23,8 @@
             <a href="services.jsp" class="nav-item nav-link text-center">Dịch vụ & sản phẩm</a>
             <a href="contact.jsp" class="nav-item nav-link text-center">Đặt lịch</a>
             <a href="memberinfo.jsp" class="nav-item nav-link text-center">Thông tin cá nhân</a>
-            <span class=" btn btn-primary navbar-item">
-                        <a  id="loginbutton">
-                        <span class="fa fa-sign-in"></span> Login</a>
-            </span>
+            <a href="register.jsp" class="bg-gradient-secondary nav-item nav-link text-center">Đăng ký</a>
+            <a data-toggle="modal" data-target="#loginModal" href="#" class="bg-gradient-success nav-item nav-link text-center">Đăng nhập</a>
         </div>
     </div>
 </nav>
@@ -43,8 +41,8 @@
                 <form>
                     <div class="form-row">
                         <div class="form-group col-sm-4">
-                            <label class="sr-only" for="exampleInputEmail3">Email address</label>
-                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            <label class="sr-only" for="exampleInputEmail3">Email address or Username</label>
+                            <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email or Password">
                         </div>
                         <div class="form-group col-sm-4">
                             <label class="sr-only" for="exampleInputPassword3">Password</label>

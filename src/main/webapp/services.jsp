@@ -41,9 +41,8 @@
     <!--Begin:Page CSS-->
     <link rel="stylesheet" type="text/css" href="/app-assets/css/core/menu/menu-types/horizontal-menu.css">
     <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-ecommerce.css">
-
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
+<body data-spy="scroll" data-target=".navbar" style="margin-left: -300px" data-offset="20">
 <!-- Navbar Start -->
 <jsp:include page="view/navbar.jsp"/>
 <!-- Navbar End -->

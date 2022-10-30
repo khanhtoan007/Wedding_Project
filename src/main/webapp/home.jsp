@@ -96,18 +96,6 @@
     </div>
     <div class="owl-carousel gallery-carousel">
         <div class="gallery-item">
-            <img class="img-fluid w-100 h-100" src="img/gallery-1.jpg" alt="">
-            <a href="img/gallery-1.jpg" data-lightbox="gallery">
-                <i class="fa fa-2x fa-plus text-white"></i>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <img class="img-fluid w-100 h-100" src="img/gallery-2.jpg" alt="">
-            <a href="img/gallery-2.jpg" data-lightbox="gallery">
-                <i class="fa fa-2x fa-plus text-white"></i>
-            </a>
-        </div>
-        <div class="gallery-item">
             <img class="img-fluid w-100 h-100" src="img/gallery-3.jpg" alt="">
             <a href="img/gallery-3.jpg" data-lightbox="gallery">
                 <i class="fa fa-2x fa-plus text-white"></i>
@@ -122,12 +110,6 @@
         <div class="gallery-item">
             <img class="img-fluid w-100 h-100" src="img/gallery-5.jpg" alt="">
             <a href="img/gallery-5.jpg" data-lightbox="gallery">
-                <i class="fa fa-2x fa-plus text-white"></i>
-            </a>
-        </div>
-        <div class="gallery-item">
-            <img class="img-fluid w-100 h-100" src="img/gallery-6.jpg" alt="">
-            <a href="img/gallery-6.jpg" data-lightbox="gallery">
                 <i class="fa fa-2x fa-plus text-white"></i>
             </a>
         </div>

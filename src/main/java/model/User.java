@@ -6,15 +6,17 @@ public class User  {
     private String fullName;
     private String email;
     private int Tel;
+    private  String role;
     private String hash;
     private boolean isEmail;
 
-    public User(String userName, String password, String fullName, String email, int tel, String hash, boolean isEmail) {
+    public User(String userName, String password, String fullName, String email, int tel, String role, String hash, boolean isEmail) {
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         Tel = tel;
+        this.role = role;
         this.hash = hash;
         this.isEmail = isEmail;
     }
@@ -24,6 +26,9 @@ public class User  {
 
     public User(String fullName) {
         this.fullName = fullName;
+    }
+
+    public User(String userName, String fullName, String email, int tel, String role) {
     }
 
     public String getUserName() {

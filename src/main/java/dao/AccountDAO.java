@@ -15,86 +15,87 @@ public class AccountDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-//    User cs = new User();
-//    public List<Account> getAccountList() {
-//        List<Account> list = new ArrayList<>();
-//        String query = "SELECT * from Account";
-//        try {
-//            conn = new DBContext().getConnection();
-//            ps = conn.prepareStatement(query);
-//            rs = ps.executeQuery();
-//            while (rs.next()) {
-//                list.add(new Account(rs.getString(1),
-//                        rs.getString(2),
-//                        rs.getString(3)));
-//            }
-//        } catch (Exception e) {
-//        }
-//
-//        return list;
-//    }
-
-//    public Customer getCustomerByUsername(String username) {
-//        String query = "SELECT * from Customer where Customer = ?";
-//        try {
-//            conn = new DBContext().getConnection();
-//            ps = conn.prepareStatement(query);
-//            ps.setString(1, username);
-//            rs = ps.executeQuery();
-//            while (rs.next()) {
-//                return new Customer(rs.getString(1),
-//                        rs.getString(2),
-//                        rs.getString(3));
-//            }
-//        } catch (Exception e) {
-//        }
-//        return null;
-//    }
-
-    public void deleteStudent(String id) {
-        String query = "delete from STUDENT\n"
-                + "where StudentID = ?";
+    public List<User> getAccountList() {
+        List<User> list = new ArrayList<>();
+        String query = "SELECT * from NGUOIDUNG";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new User(rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getBoolean(8)));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+
+    public User getCustomerByUsername(String username) {
+        String query = "SELECT * from NGUOIDUNG where username = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new User(rs.getString(1),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getInt(5),
+                         rs.getString(6));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+    public void deleteUser(String user) {
+        String query = "delete from NGUOIDUNG\n"
+                + "where username = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
-    public void addStudent(String name, int classID, int age, String image) {
-        String query = "INSERT INTO STUDENT\n"
-                + "VALUES (?, ?, ?,?);";
+    public void addUser(String userName, String password, String fullName, String role) {
+        String query = "INSERT INTO NGUOIDUNG\n"
+                + "VALUES (?, ?, ?,?,?,?,?,?);";
 
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setInt(2, classID);
-            ps.setInt(3, age);
-            ps.setString(4, image);
+            ps.setString(1, userName);
+            ps.setString(2, password);
+            ps.setString(3, fullName);
+            ps.setString(6, role);
             ps.executeUpdate();
         } catch (Exception e) {
 
         }
     }
 
-    public void updateStudent(int id, String name, int classID, int age, String image) {
-        String query = "update Student set "
-                + "StudentName=?, "
-                + "Age=?, "
-                + "ClassID=?,"
-                + "Image=? "
-                + "where StudentID=? ";
+    public void updateUser(String userName,String fullName, String role) {
+        String query = "update NGUOIDUNG set " +
+                "fullname=?, " +
+                "role=?, "
+                + "where username=? ";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setInt(2, age);
-            ps.setInt(3, classID);
-            ps.setString(4, image);
-            ps.setInt(5, id);
+            ps.setString(1, fullName);
+            ps.setString(2, role);
             ps.executeUpdate();
         } catch (Exception e) {
         }

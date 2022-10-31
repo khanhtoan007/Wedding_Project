@@ -2,13 +2,14 @@ package model;
 
 import java.util.Date;
 
-public class Feedback {
+public class Feedback extends User {
     private String idFeedback;
     private int ratingStar;
     private String comments;
     private Date createAt;
 
-    public Feedback(String idFeedback, int ratingStar, String comments, Date createAt) {
+    public Feedback(String fullName,String idFeedback, int ratingStar, String comments, Date createAt) {
+        super(fullName);
         this.idFeedback = idFeedback;
         this.ratingStar = ratingStar;
         this.comments = comments;

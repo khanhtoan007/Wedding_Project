@@ -1,8 +1,7 @@
 package dao;
 
 import context.DBContext;
-import model.Account;
-import model.Customer;
+import model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,24 +15,24 @@ public class AccountDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    Customer cs = new Customer();
-    public List<Account> getAccountList() {
-        List<Account> list = new ArrayList<>();
-        String query = "SELECT * from Account";
-        try {
-            conn = new DBContext().getConnection();
-            ps = conn.prepareStatement(query);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(new Account(rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3)));
-            }
-        } catch (Exception e) {
-        }
-
-        return list;
-    }
+//    User cs = new User();
+//    public List<Account> getAccountList() {
+//        List<Account> list = new ArrayList<>();
+//        String query = "SELECT * from Account";
+//        try {
+//            conn = new DBContext().getConnection();
+//            ps = conn.prepareStatement(query);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                list.add(new Account(rs.getString(1),
+//                        rs.getString(2),
+//                        rs.getString(3)));
+//            }
+//        } catch (Exception e) {
+//        }
+//
+//        return list;
+//    }
 
 //    public Customer getCustomerByUsername(String username) {
 //        String query = "SELECT * from Customer where Customer = ?";

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login page</title>
+    <jsp:include page="view/header.jsp"/>
 </head>
 <body>
 <h1><%= "Hello World!" %>
@@ -13,30 +13,41 @@
 <a href="adminManageCustomer.jsp">Admin page 1</a>
 <a href="adminViewStaffDetail.jsp">Staff detail</a>
 <h2>Demo WebSocket Chat Room</h2>
-<input id="textMessage" type="text" />
-<input onclick="sendMessage()" value="Send Message" type="button" /> <br/><br/>
+<input id="textMessage" type="text"/>
+<input onclick="sendMessage()" value="Send Message" type="button"/> <br/><br/>
 
 <textarea id="textAreaMessage" rows="10" cols="50"></textarea>
 
 <script type="text/javascript">
     var websocket = new WebSocket("ws://localhost:8080/chatRoomServer");
-    websocket.onopen = function(message) {processOpen(message);};
-    websocket.onmessage = function(message) {processMessage(message);};
-    websocket.onclose = function(message) {processClose(message);};
-    websocket.onerror = function(message) {processError(message);};
+    websocket.onopen = function (message) {
+        processOpen(message);
+    };
+    websocket.onmessage = function (message) {
+        processMessage(message);
+    };
+    websocket.onclose = function (message) {
+        processClose(message);
+    };
+    websocket.onerror = function (message) {
+        processError(message);
+    };
 
     function processOpen(message) {
         textAreaMessage.value += "Server connect... \n";
     }
+
     function processMessage(message) {
         console.log(message);
         textAreaMessage.value += message.data + " \n";
     }
+
     function processClose(message) {
         textAreaMessage.value += "Server Disconnect... \n";
     }
+
     function processError(message) {
-        textAreaMessage.value += "Error... " + message +" \n";
+        textAreaMessage.value += "Error... " + message + " \n";
     }
 
     function sendMessage() {
@@ -48,5 +59,17 @@
 
 </script>
 
+<input type="checkbox" id="check">
+<label class="chat-btn" for="check"> <i class="fa fa-commenting-o comment"></i>
+    <i class="fa fa-close close"></i>
+</label>
+<div class="wrapper">
+    <div class="header"> <h6>Let's Chat - Online</h6> </div>
+    <div class="text-center p-2"> <span>Please fill out the form to start chat!</span> </div>
+    <div class="chat-form"> <input type="text" class="form-control" placeholder="Name">
+        <input type="text" class="form-control" placeholder="Email"> <textarea class="form-control" placeholder="Your Text Message"></textarea>
+        <button class="btn btn-success btn-block">Submit</button>
+    </div>
+</div>
 </body>
 </html>

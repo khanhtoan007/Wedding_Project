@@ -2,14 +2,21 @@ package model;
 
 import java.util.Date;
 
-public class Order extends Customer {
+public class Order extends User {
     private String orderID;
     private Date createAt;
     private Date startTime;
     private Date stopTime;
 
-    public Order(String name, String orderID, Date createAt, Date startTime, Date stopTime) {
-        super(name);
+    public Order(String fullName, String orderID, Date createAt, Date startTime, Date stopTime) {
+        super(fullName);
+        this.orderID = orderID;
+        this.createAt = createAt;
+        this.startTime = startTime;
+        this.stopTime = stopTime;
+    }
+
+    public Order(String orderID, Date createAt, Date startTime, Date stopTime) {
         this.orderID = orderID;
         this.createAt = createAt;
         this.startTime = startTime;

@@ -1,30 +1,30 @@
 package model;
 
-public class Services {
+public class Product {
     private String productID;
     private String productName;
     private int quantity;
     private int price;
-    private String type;
+    private String category;
     private String description;
     private String image;
     private boolean status;
 
-    public Services() {
+    public Product() {
     }
 
-    public Services(String productID, String productName, int quantity, int price, String type, String description, String image, boolean status) {
+    public Product(String productID, String productName, int quantity, int price, String category, String description, String image, boolean status) {
         this.productID = productID;
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
-        this.type = type;
+        this.category = category;
         this.description = description;
         this.image = image;
         this.status = status;
     }
 
-    public Services(String productID) {
+    public Product(String productID) {
 
     }
 
@@ -52,12 +52,12 @@ public class Services {
         this.quantity = quantity;
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getDescription() {
@@ -99,7 +99,7 @@ public class Services {
                 ", productName='" + productName + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", type='" + type + '\'' +
+                ", type='" + category + '\'' +
                 ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
                 ", status=" + status +

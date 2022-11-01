@@ -1,4 +1,4 @@
-package dao;
+package dao.admin;
 
 import context.DBContext;
 import java.sql.Connection;

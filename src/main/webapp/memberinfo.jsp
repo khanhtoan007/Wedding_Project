@@ -18,6 +18,12 @@
 
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="row justify-content-center align-items-center">
+            <form class="form-inline">
+                <input class="form-control" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
         <div class="container-lg mt-5">
             <div class="row justify-content-center">
                 <div class="col-lg">

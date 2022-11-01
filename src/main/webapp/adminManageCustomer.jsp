@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>
@@ -55,31 +57,24 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#ID</th>
-            <th scope="col">Họ tên</th>
-            <th scope="col">Số điện thoại</th>
-            <th scope="col">Email</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Pass</th>
+            <th scope="col">Full name</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
+        <c:forEach items="${list}" var="i">
+            <tr>
+                <td>${i.userName}</td>
+                <td>${i.password}</td>
+                <td>${i.fullName()}</td>
+                <td>
+                    <a role="button" class="btn btn-info" href="updateAccount?username=${i.username}">Update</a>
+                    <a role="button" class="btn btn-danger" href="DeleteControl?userName=${i.userName}">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+
         </tbody>
     </table>
 </div>

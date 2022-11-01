@@ -5,11 +5,11 @@
  */
 package control;
 
-import dao.StudentDAO;
-import entity.Student;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+import dao.admin.AccountDAO;
+import model.User;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,34 +31,20 @@ public class LoadServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        StudentDAO dao = new StudentDAO();
-        List<Student> list = dao.getStudentList();
+        AccountDAO dao = new AccountDAO();
+        List<User> list = dao.getAccountList();
 
-        request.setAttribute("listS", list);
-        request.getRequestDispatcher("listStudent.jsp").forward(request, response);
+        request.setAttribute("list", list);
+        request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
 
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
 
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";

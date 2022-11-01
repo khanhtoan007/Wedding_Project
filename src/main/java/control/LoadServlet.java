@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package control;
 
-import dao.StudentDAO;
-import entity.Student;
-import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
-import jakarta.servlet.http.*;
+
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,7 +30,6 @@ public class LoadServlet extends HttpServlet {
 
         request.setAttribute("listS", list);
         request.getRequestDispatcher("listStudent.jsp").forward(request, response);
-
     }
 
     /**

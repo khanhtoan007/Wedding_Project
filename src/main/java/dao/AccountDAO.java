@@ -15,6 +15,7 @@ public class AccountDAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
+        //=============ADMIN DAO=============
     public List<User> getAccountList() {
         List<User> list = new ArrayList<>();
         String query = "SELECT * from NGUOIDUNG";
@@ -98,6 +99,18 @@ public class AccountDAO {
             ps.setString(2, role);
             ps.executeUpdate();
         } catch (Exception e) {
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+        AccountDAO dao = new AccountDAO();
+        User us = new User();
+        List<User> list = dao.getAccountList();
+        System.out.println(dao.getCustomerByUsername("admin"));
+        for (User o : list) {
+            System.out.println(o);
         }
     }
 }

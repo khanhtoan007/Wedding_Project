@@ -1,11 +1,6 @@
 package control;
-
-<<<<<<< HEAD
-
-=======
 import dao.admin.AccountDAO;
 import model.User;
->>>>>>> 62b3187c2e75b04e0ed1180d7d219dc653550fa9
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
@@ -33,14 +28,12 @@ public class LoadServlet extends HttpServlet {
         AccountDAO dao = new AccountDAO();
         List<User> list = dao.getAccountList();
 
-<<<<<<< HEAD
         request.setAttribute("listS", list);
         request.getRequestDispatcher("listStudent.jsp").forward(request, response);
-=======
         request.setAttribute("list", list);
         request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
 
->>>>>>> 62b3187c2e75b04e0ed1180d7d219dc653550fa9
+
     }
 
     @Override

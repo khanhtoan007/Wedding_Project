@@ -87,6 +87,14 @@ public class User  {
         isEmail = email;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -95,6 +103,7 @@ public class User  {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", Tel=" + Tel +
+                ", role='" + role + '\'' +
                 ", hash='" + hash + '\'' +
                 ", isEmail=" + isEmail +
                 '}';

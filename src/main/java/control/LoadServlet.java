@@ -1,5 +1,4 @@
 package control;
-
 import dao.admin.AccountDAO;
 import model.User;
 import javax.servlet.*;
@@ -27,10 +26,19 @@ public class LoadServlet extends HttpServlet {
         processRequest(request, response);
         AccountDAO dao = new AccountDAO();
         List<User> list = dao.getAccountList();
+
         System.out.println(1);
         System.out.println(list);
         request.setAttribute("list", list);
         request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
+
+
+        request.setAttribute("listS", list);
+        request.getRequestDispatcher("listStudent.jsp").forward(request, response);
+        request.setAttribute("list", list);
+        request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
+
+
     }
 
     @Override

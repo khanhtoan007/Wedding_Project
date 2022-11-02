@@ -8,8 +8,8 @@ public class Feedback extends User {
     private String comments;
     private Date createAt;
 
-    public Feedback(String fullName,String idFeedback, int ratingStar, String comments, Date createAt) {
-        super(fullName);
+    public Feedback(String username,String idFeedback, int ratingStar, String comments, Date createAt) {
+        super(username);
         this.idFeedback = idFeedback;
         this.ratingStar = ratingStar;
         this.comments = comments;

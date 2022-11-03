@@ -70,7 +70,7 @@
                 <td>${i.getPassword()}</td>
                 <td>${i.getFullName()}</td>
                 <td>
-                    <a role="button" class="btn btn-info" href="updateAccount?username=${i.getUserName()}">Update</a>
+                    <a role="button" class="btn btn-info" href="update?sid=${i.getUserName()}">Update</a>
                     <a role="button" class="btn btn-danger" href="DeleteControl?userName=${i.getUserName()}">Delete</a>
                 </td>
             </tr>

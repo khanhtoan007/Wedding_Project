@@ -10,7 +10,7 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="home.jsp">Homepage</a>
-<a href="adminManageCustomer.jsp">Admin page 1</a>
+<a href="LoadServlet">Admin page 1</a>
 <a href="adminViewStaffDetail.jsp">Staff detail</a>
 <a href="updateInfo.jsp">Member update info</a>
 <h2>Demo WebSocket Chat Room</h2>

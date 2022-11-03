@@ -37,7 +37,7 @@
                 Welcome, admin
     </span>
     <div class="mr-1">
-        <button class="btn btn-outline-danger">Đăng xuất</button>
+        <button class="btn btn-danger">Đăng xuất</button>
     </div>
 </nav>
 <div class="container">

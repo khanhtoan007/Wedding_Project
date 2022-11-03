@@ -13,6 +13,7 @@
 <a href="adminManageCustomer.jsp">Admin page 1</a>
 <a href="adminViewStaffDetail.jsp">Staff detail</a>
 <a href="updateInfo.jsp">Member update info</a>
+<a href="manageServices.jsp">Manage Services</a>
 <h2>Demo WebSocket Chat Room</h2>
 <input id="textMessage" type="text"/>
 <input onclick="sendMessage()" value="Send Message" type="button"/> <br/><br/>

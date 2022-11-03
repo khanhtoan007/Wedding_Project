@@ -17,34 +17,39 @@ public class LoginDAO {
     ResultSet rs = null;
 
         //=============Login DAO=============
-    public  boolean checkLogin(String user,String email, String password){
+    public User checkLogin(String user, String password){
         boolean isValid = false;
         String query = "select * from NGUOIDUNG where username = ? or email = ? and password = ?";
         try{
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
-            ps.setString(2,email);
+            ps.setString(2, user);;
             ps.setString(3,password);
             rs = ps.executeQuery();
-            if (rs.next()){
-                isValid = true;
-            } else {
-                isValid = false;
+            while (rs.next()) {
+                return  new User(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),                        rs.getString(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getBoolean(8)
+                );
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return isValid;
+        return null;
     }
 
 
     public static void main(String[] args) {
         LoginDAO dao = new LoginDAO();
         User us = new User();
-        System.out.println(dao.checkLogin("admin", null, "1"));
-
+        System.out.println(dao.checkLogin("staff", "staff"));
     }
 }

@@ -24,7 +24,7 @@
             <a href="contact.jsp" class="nav-item nav-link text-center">Đặt lịch</a>
             <a href="memberinfo.jsp" class="nav-item nav-link text-center">Thông tin cá nhân</a>
             <a href="register.jsp" class="bg-gradient-secondary nav-item nav-link text-center">Đăng ký</a>
-            <a data-toggle="modal" data-target="#loginModal" href="#" class="bg-gradient-success nav-item nav-link text-center">Đăng nhập</a>
+            <a href="login.jsp" class="bg-gradient-success nav-item nav-link text-center">Đăng nhập</a>
         </div>
     </div>
 </nav>

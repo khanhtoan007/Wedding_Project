@@ -57,20 +57,21 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">User Name</th>
-            <th scope="col">Pass</th>
-            <th scope="col">Full name</th>
+            <th scope="col">cc Name</th>
+            <th scope="col">cc</th>
+            <th scope="col">cc name</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${list}" var="i">
             <tr>
-                <td>${i.userName}</td>
-                <td>${i.password}</td>
-                <td>${i.fullName()}</td>
+                <td>${i.getUserName()}</td>
+                <td>${i.getPassword()}</td>
+                <td>${i.getFullName()}</td>
                 <td>
-                    <a role="button" class="btn btn-info" href="updateAccount?username=${i.username}">Update</a>
-                    <a role="button" class="btn btn-danger" href="DeleteControl?userName=${i.userName}">Delete</a>
+                    <a role="button" class="btn btn-info" href="updateAccount?username=${i.getUserName()}">Update</a>
+                    <a role="button" class="btn btn-danger" href="DeleteControl?userName=${i.getUserName()}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

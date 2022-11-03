@@ -5,20 +5,20 @@ public class User  {
     private String password;
     private String fullName;
     private String email;
-    private int Tel;
-    private  String role;
-    private String hash;
+    private String Tel;
     private boolean isEmail;
+    private String hash;
+    private  String role;
 
-    public User(String userName, String password, String fullName, String email, int tel, String role, String hash, boolean isEmail) {
+    public User(String userName, String password, String fullName, String email, String tel, boolean isEmail, String hash, String role) {
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
         Tel = tel;
-        this.role = role;
-        this.hash = hash;
         this.isEmail = isEmail;
+        this.hash = hash;
+        this.role = role;
     }
 
     public User() {
@@ -28,7 +28,11 @@ public class User  {
         this.fullName = fullName;
     }
 
-    public User(String userName, String fullName, String email, int tel, String role) {
+    public User(String userName, String password, String fullName, String role) {
+        this.userName = userName;
+        this.password = password;
+        this.fullName = fullName;
+        this.role = role;
     }
 
     public String getUserName() {
@@ -63,11 +67,11 @@ public class User  {
         this.email = email;
     }
 
-    public int getTel() {
+    public String getTel() {
         return Tel;
     }
 
-    public void setTel(int tel) {
+    public void setTel(String tel) {
         Tel = tel;
     }
 

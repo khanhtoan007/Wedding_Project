@@ -1,0 +1,51 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: FPTSHOP
+  Date: 11/3/2022
+  Time: 12:39 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;">
+    <div class="row" style="border: 1px darkgrey solid; border-radius: 10px;width: 50%; margin: 0 auto; padding: 20px;" >
+        <div class="col-sm-12">
+            <h3>Update Account</h3>
+            <form action="update" method="post">
+                <div class="form-group mb-2">
+                    <label for="">Username</label>
+                    <input class="bg-secondary text-white font-weight-bolder form-control" type="text" name="name" value="${st.getUserName()}" readonly="true" />
+                </div>
+                <div class="form-group mb-2">
+                    <label for="">Role</label>
+                    <input type="text" name="role" value="${st.getRole()}" class="form-control">
+                </div>
+                <div class="form-group mb-2">
+                    <label for="">Full Name</label>
+                    <input type="text" name="fullname" value="${st.getFullName()}" class="form-control">
+                </div>
+<%--                <div class="form-group mb-2">--%>
+<%--                    <label for="">Role</label>--%>
+<%--                    <c:if test="${st.isRole()==true}">--%>
+<%--                        <input type="text" class="form-control border border-2" name="role" value="Admin" readonly>--%>
+<%--                    </c:if>--%>
+<%--                    <c:if test="${st.isRole()==false}">--%>
+<%--                        <input type="text" class="form-control border border-2" name="role" value="User" readonly>--%>
+<%--                    </c:if>--%>
+<%--                </div>--%>
+<%--                <div class="form-group mb-2">--%>
+<%--                    <label>Status</label>--%>
+<%--                    <input type="text" class="form-control border border-2" name="status" value="${st.isStatus() == true}" readonly>--%>
+<%--                </div>--%>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+            <div><p class="text-danger">${MESSAGE}</p></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

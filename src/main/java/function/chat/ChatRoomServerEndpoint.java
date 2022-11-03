@@ -1,4 +1,4 @@
-package function;
+package function.chat;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

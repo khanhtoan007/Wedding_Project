@@ -1,7 +1,7 @@
 package model;
 
 public class Product {
-    private String productID;
+     private String productID;
     private String productName;
     private String category;
     private int price;

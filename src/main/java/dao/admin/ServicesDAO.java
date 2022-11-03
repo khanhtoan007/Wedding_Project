@@ -16,7 +16,7 @@ public class ServicesDAO {
     ResultSet rs = null;
     public List<Product> getProductList() {
         List<Product> list = new ArrayList<>();
-        String query = "SELECT * from PRODUCT";
+        String query = "SELECT * from PRODUCT ";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);

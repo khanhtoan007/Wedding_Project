@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Feedback extends User {
-    private String idFeedback;
+     private String idFeedback;
     private int ratingStar;
     private String comments;
     private Date createAt;

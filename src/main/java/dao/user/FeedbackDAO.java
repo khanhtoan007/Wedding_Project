@@ -64,7 +64,7 @@ public class FeedbackDAO {
     }
     public void addFeedback(String username, int ratingStar, String comments, Date createAt) {
         String query = "INSERT INTO FEEDBACK\n"
-                + "VALUES (?, ?, ?, ?);";
+                + "VALUES (?, ?, ?, ?) ;";
 
         try {
             conn = new DBContext().getConnection();
@@ -91,6 +91,7 @@ public class FeedbackDAO {
             ps.setString(2, comments);
             ps.setDate(3, (java.sql.Date) createAt);
             ps.setString(4, idFeedback);
+
             ps.executeUpdate();
         } catch (Exception e) {
         }

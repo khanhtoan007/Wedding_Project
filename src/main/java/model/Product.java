@@ -1,19 +1,19 @@
 package model;
 
 public class Product {
-    private String productID;
+     private String productID;
     private String productName;
-    private int quantity;
-    private int price;
     private String category;
-    private String description;
+    private int price;
+    private int quantity;
     private String image;
     private boolean status;
+    private String description;
 
     public Product() {
     }
 
-    public Product(String productID, String productName, int quantity, int price, String category, String description, String image, boolean status) {
+    public Product(String productID, String productName, String category, int price, int quantity, String image, boolean status, String description) {
         this.productID = productID;
         this.productName = productName;
         this.quantity = quantity;
@@ -22,10 +22,6 @@ public class Product {
         this.description = description;
         this.image = image;
         this.status = status;
-    }
-
-    public Product(String productID) {
-
     }
 
     public String getProductID() {
@@ -44,14 +40,6 @@ public class Product {
         this.productName = productName;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -60,12 +48,20 @@ public class Product {
         this.category = category;
     }
 
-    public String getDescription() {
-        return description;
+    public int getPrice() {
+        return price;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public String getImage() {
@@ -84,12 +80,12 @@ public class Product {
         this.status = status;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -97,12 +93,12 @@ public class Product {
         return "Services{" +
                 "productID='" + productID + '\'' +
                 ", productName='" + productName + '\'' +
+                ", category='" + category + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
-                ", type='" + category + '\'' +
-                ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
                 ", status=" + status +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

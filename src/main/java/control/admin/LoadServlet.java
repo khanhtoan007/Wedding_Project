@@ -1,4 +1,4 @@
-package control;
+package control.admin;
 import dao.admin.AccountDAO;
 import model.User;
 import javax.servlet.*;

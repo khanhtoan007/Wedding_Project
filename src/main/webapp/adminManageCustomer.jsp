@@ -60,13 +60,13 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th>id</th>
+            <th>Id</th>
             <th>Username</th>
             <th>Fullname</th>
-            <th>email</th>
-            <th>tel</th>
-            <th>email</th>
-            <th>role</th>
+            <th>Email</th>
+            <th>Tel</th>
+            <th>Confirm Email</th>
+            <th>Role</th>
             <th class="text-center">action</th>
         </tr>
         </thead>

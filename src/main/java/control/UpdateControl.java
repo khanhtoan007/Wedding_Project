@@ -12,8 +12,6 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 /**
  *
@@ -41,30 +39,23 @@ public class UpdateControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user = request.getParameter("sid");
+        int user = Integer.parseInt(request.getParameter("sid"));
 
         AccountDAO dao = new AccountDAO();
-        User list = dao.getCustomerByUsername(user);
+        User list = dao.getCustomerById(user);
         request.setAttribute("st", list);
-        System.out.println("Check cung a nghien");
-        System.out.println(user);
-        System.out.println(list);
-        System.out.println(dao.getCustomerByUsername(user));
-        System.out.println("End check");
         request.getRequestDispatcher("updateAccount.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        String url = "";
-
+        int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("name");
         String role = request.getParameter("role");
         String fullname = request.getParameter("fullname");
-
         AccountDAO dao = new AccountDAO();
-        dao.updateUser(username, fullname, role);
+        dao.updateUser(id, username, fullname, role);
         response.sendRedirect("LoadServlet");
         System.out.println(dao.getAccountList());
     }

@@ -5,7 +5,11 @@
   Time: 9:15 PM
   To change this template use File | Settings | File Templates.
 --%>
+<<<<<<< HEAD
 <%@ page contentType="text/html;charset=UTF-8" %>
+=======
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
+>>>>>>> 7e1f29f809ac87af929dc3f2cd1677925b502f41
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>

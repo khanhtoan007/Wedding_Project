@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: FPTSHOP
-  Date: 10/29/2022
-  Time: 8:25 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>
@@ -23,6 +17,8 @@
                 <h1 class="font-secondary display-4">Register</h1>
                 <i class="far fa-heart text-dark"></i>
             </div>
+            <div><%= request.getAttribute("message") %></div>
+            <div id="wait_alert" class="alert alert-info" hidden role="alert">Đang tạo tài khoản cho bạn, vui lòng chờ trong ít giây.</div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                         <div class="col-12">
@@ -31,22 +27,30 @@
                                     <h4 class="card-title">Register</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form id="jquery-val-form" method="post" novalidate="novalidate">
+                                    <form id="jquery-val-form" method="post" action="RegisterServlet" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label class="form-label" for="basic-default-name">Name</label>
-                                            <input type="text" class="form-control" id="basic-default-name" name="basic-default-name" placeholder="John Doe">
+                                            <label class="form-label" for="basic-default-name">Username</label>
+                                            <input type="text" class="form-control" id="basic-default-name" name="username" placeholder="John Doe">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="basic-default-name">Full name</label>
+                                            <input type="text" class="form-control" id="basic-default-fullname" name="fullname" placeholder="John Doe">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="basic-default-email">Email</label>
-                                            <input type="text" id="basic-default-email" name="basic-default-email" class="form-control" placeholder="john.doe@email.com">
+                                            <input type="text" id="basic-default-email" name="email" class="form-control" placeholder="john.doe@email.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="basic-default-email">Phone number</label>
+                                            <input type="text" id="basic-default-phone" name="tel" class="form-control" placeholder="01234567890">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="basic-default-password">Password</label>
-                                            <input type="password" id="basic-default-password" name="basic-default-password" class="form-control" placeholder="············">
+                                            <input type="password" id="basic-default-password" name="password1" class="form-control" placeholder="············">
                                         </div>
                                         <div class="form-group">
                                             <label class="form-label" for="confirm-password">Confirm Password</label>
-                                            <input type="password" id="confirm-password" name="confirm-password" class="form-control" placeholder="············">
+                                            <input type="password" id="confirm-password" name="password2" class="form-control" placeholder="············">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
@@ -57,7 +61,7 @@
 
                                         <div class="row">
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-float waves-light" name="submit" value="Submit">Submit</button>
+                                                <button type="submit" id="register" class="btn btn-primary waves-effect waves-float waves-light">Register</button>
                                             </div>
                                         </div>
                                     </form>
@@ -90,13 +94,11 @@
     <script src="app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
 
     <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
-            }
+        $(document).ready(function () {
+            $("#register").click(function () {
+                console.log(1)
+                $("#wait_alert").removeAttr('hidden')
+            })
         })
     </script>
     <script src="app-assets/js/core/app-menu.js"></script>

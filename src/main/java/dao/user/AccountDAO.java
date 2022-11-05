@@ -24,14 +24,16 @@ public class AccountDAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new User(rs.getString(1),
+                list.add(new User(rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getBoolean(6),
-                        rs.getString(7),
-                        rs.getString(8)));
+                        rs.getString(6),
+                        rs.getBoolean(7),
+                        rs.getString(8),
+                        rs.getString(8)
+                        ));
             }
         } catch (Exception e) {
         }
@@ -39,23 +41,23 @@ public class AccountDAO {
         return list;
     }
 
-    public User getCustomerByUsername(String username) {
-        String query = "SELECT * from NGUOIDUNG where username = ?";
-        try {
-            conn = new DBContext().getConnection();
-            ps = conn.prepareStatement(query);
-            ps.setString(1, username);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return new User(rs.getString(1),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5));
-            }
-        } catch (Exception e) {
-        }
-        return null;
-    }
+//    public User getCustomerByUsername(String username) {
+//        String query = "SELECT * from NGUOIDUNG where username = ?";
+//        try {
+//            conn = new DBContext().getConnection();
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, username);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return new User(rs.getString(1),
+//                        rs.getString(3),
+//                        rs.getString(4),
+//                        rs.getString(8));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return null;
+//    }
 
     public void deleteUser(String user) {
         String query = "delete from NGUOIDUNG\n"
@@ -103,13 +105,13 @@ public class AccountDAO {
 
 
 
-    public static void main(String[] args) {
-        AccountDAO dao = new AccountDAO();
-        User us = new User();
-        List<User> list = dao.getAccountList();
-        System.out.println(dao.getCustomerByUsername("admin"));
-        for (User o : list) {
-            System.out.println(o);
-        }
-    }
+//    public static void main(String[] args) {
+//        AccountDAO dao = new AccountDAO();
+//        User us = new User();
+//        List<User> list = dao.getAccountList();
+//        System.out.println(dao.getCustomerByUsername("admin"));
+//        for (User o : list) {
+//            System.out.println(o);
+//        }
+//    }
 }

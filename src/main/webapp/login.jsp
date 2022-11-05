@@ -5,6 +5,8 @@
   Time: 4:12 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,19 +39,18 @@
 <!-- Pills content -->
 <div class="tab-content">
     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <div><%= request.getAttribute("message") %></div>
         <form>
             <div class="text-center mb-3">
                 <p>Sign in with:</p>
                 <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-facebook-f"></i>
-                </button>
 
-                <button type="button" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/AccessGoogle/login-google&response_type=code
-    &client_id=352140522561-vpmetjr6bjce1vod9b0cppihhbcgdesh.apps.googleusercontent.com&approval_prompt=force" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                </button>
+                    <a class="btn btn-link btn-floating mx-1 btn-google" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/AccessGoogle/login-google&response_type=code
+    &client_id=352140522561-vpmetjr6bjce1vod9b0cppihhbcgdesh.apps.googleusercontent.com&approval_prompt=force"><i class="fab fa-google"></i></a>
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
+
+                    <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-twitter"></i>
                 </button>
 

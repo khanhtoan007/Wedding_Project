@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 
 public class AccountDAO {
@@ -24,63 +25,59 @@ public class AccountDAO {
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new User(rs.getString(1),
+                list.add(new User(
+                        rs.getInt(1),
                         rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
                         rs.getString(5),
-                        rs.getBoolean(6),
-                        rs.getString(7),
-                        rs.getString(8)));
+                        rs.getString(6),
+                        rs.getBoolean(7),
+                        rs.getString(8),
+                        rs.getString(9)
+                        )
+                );
             }
         } catch (Exception e) {
         }
-
         return list;
     }
 
-    public User getCustomerByUsername(String username) {
+    public User getCustomerById(int id) {
         User user = new User() ;
-        String query = "SELECT * from NGUOIDUNG where username = ?";
+        String query = "SELECT * from NGUOIDUNG where id = ?";
         try {
             conn = new DBContext().getConnection();
-            System.out.println(conn);
             ps = conn.prepareStatement(query);
-            ps.setString(1, username);
+            ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                System.out.println(rs.getString(1));
-                System.out.println(rs.getString(3));
-                System.out.println(rs.getString(8));
-                System.out.println(rs.getString(5));
-                System.out.println(rs.getString(6));
-
                 user = new User(
-                        rs.getString(1),
+                        rs.getInt(1),
+                        rs.getString(2),
                         rs.getString(3),
                         rs.getString(4),
-                        rs.getString(5));
+                        rs.getString(9));
             }
         } catch (Exception e) {
         }
     return user;
     }
 
-    public void deleteUser(String user) {
+    public void deleteUser(int id) {
         String query = "delete from NGUOIDUNG\n"
-                + "where username = ?";
+                + "where id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, user);
+            ps.setInt(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
-    public void addUser(String userName, String password, String fullName, String role) {
-        String query = "INSERT INTO NGUOIDUNG\n"
-                + "VALUES (?, ?, ?,?,?,?,?,?);";
+    public boolean addUser(String userName, String password, String fullName, String email, String tel, String hash) {
+        String query = "INSERT INTO NGUOIDUNG VALUES (?, ?, ?,?,?,?,?,?);";
 
         try {
             conn = new DBContext().getConnection();
@@ -88,39 +85,107 @@ public class AccountDAO {
             ps.setString(1, userName);
             ps.setString(2, password);
             ps.setString(3, fullName);
-            ps.setString(6, role);
+            ps.setString(4, email);
+            ps.setString(5, tel);
+            ps.setBoolean(6, false);
+            ps.setString(7,hash);
+            ps.setString(8, "User");
             ps.executeUpdate();
         } catch (Exception e) {
-
+            return false;
         }
+        return true;
     }
 
-    public void updateUser(String userName,String fullName, String role) {
+    public void updateUser(int id, String userName,String fullName, String role) {
         String query = "update NGUOIDUNG set Fullname = ?," +
-                "set Role = ? " +
-                "where username = ?";
+                " Role = ? " +
+                "where id = ?";
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, fullName);
             ps.setString(2, role);
-            ps.setString(3,userName);
+            ps.setInt(3,id);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
+    public ArrayList<User> seachUser(String fullname){
+        String query = "select * from NGUOIDUNG where Fullname like ?";
+        ArrayList<User> result = new ArrayList<>();
+        int i =0;
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + fullname + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                result.add(new User(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(9)));
+            }
+        } catch (Exception e) {
+        }
+        return result;
+    }
 
+    public boolean checkUsername(String username){
+        String query = "select * from NGUOIDUNG where username = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return false;
+            }
+        } catch (Exception e) {
+        }
+        return true;
+    }
 
+    public boolean checkEmail(String email){
+        String query = "select * from NGUOIDUNG where email = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return false;
+            }
+        } catch (Exception e) {
+        }
+        return true;
+    }
+
+    public boolean activeMail(String hash){
+        String query = "select * from NGUOIDUNG where hash_string = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, hash);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                String sql_update_mail = "update NGUOIDUNG set is_Email = ? where hash_string = ?";
+                conn = new DBContext().getConnection();
+                ps = conn.prepareStatement(sql_update_mail);
+                ps.setBoolean(1, true);
+                ps.setString(2, hash);
+                ps.executeUpdate();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         AccountDAO dao = new AccountDAO();
-        User us = new User();
-//        List<User> list = dao.getCustomerByUsername("admin");
-        System.out.println(dao.getCustomerByUsername("admin"));
-        User b = new User("MinhNghien", "abc","1232132", "Admin");
-        System.out.println(b);
-//        for (User o : list) {
-//            System.out.println(o);
-//        }
+        System.out.println(dao.activeMail("071d4160-8d77-448d-b5d2-127fc2d9085f"));
     }
 }

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -42,36 +42,47 @@
 </nav>
 <div class="container">
     <div class="col-md-12 text-center mb-3">
-        <h2>Danh sách người dùng</h2>
+<%--        <c:if action="${search}">--%>
+<%--            <h2>ket qua tim kiem</h2>--%>
+<%--        </c:if>--%>
+<%--        <c:if action !="${search}">--%>
+<%--            <h2>Danh sách người dùng</h2>--%>
+<%--        </c:if>--%>
+        <h2>${action.equals("search") ? "ket qua tim kiem" : "Danh sách người dùng"}</h2>
+
     </div>
-    <%--    <div class="col-md-12 text-center mb-3">--%>
-    <%--        <button type="button" class="btn btn-dark">Người dùng</button>--%>
-    <%--        <button type="button" class="btn btn-dark">Nhân viên</button>--%>
-    <%--    </div>--%>
     <div class="row justify-content-center align-items-center">
-        <form class="form-inline">
-            <input class="form-control" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">
+        <form action="SearchUserServlet" method="post" class="form-inline">
+            <input class="form-control" name="fullname" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">cc Name</th>
-            <th scope="col">cc</th>
-            <th scope="col">cc name</th>
-            <th colspan="2">Action</th>
+            <th>id</th>
+            <th>Username</th>
+            <th>Fullname</th>
+            <th>email</th>
+            <th>tel</th>
+            <th>email</th>
+            <th>role</th>
+            <th class="text-center">action</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${list}" var="i">
             <tr>
+                <td>${i.getId()}</td>
                 <td>${i.getUserName()}</td>
-                <td>${i.getPassword()}</td>
                 <td>${i.getFullName()}</td>
+                <td>${i.getEmail()}</td>
+                <td>${i.getTel()}</td>
+                <td>${i.isEmail()}</td>
+                <td>${i.getRole()}</td>
                 <td>
-                    <a role="button" class="btn btn-info" href="update?sid=${i.getUserName()}">Update</a>
-                    <a role="button" class="btn btn-danger" href="DeleteControl?userName=${i.getUserName()}">Delete</a>
+                    <a role="button" class="btn btn-info" href="update?sid=${i.getId()}">Update</a>
+                    <a role="button" class="btn btn-danger" href="DeleteControl?sid=${i.getId()}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

@@ -42,14 +42,12 @@
                 <p>Sign in with:</p>
                 <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-facebook-f"></i>
-                </button>
 
-                <button type="button" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/AccessGoogle/login-google&response_type=code
-    &client_id=352140522561-vpmetjr6bjce1vod9b0cppihhbcgdesh.apps.googleusercontent.com&approval_prompt=force" class="btn btn-link btn-floating mx-1">
-                    <i class="fab fa-google"></i>
-                </button>
+                    <a class="btn btn-link btn-floating mx-1 btn-google" href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/AccessGoogle/login-google&response_type=code
+    &client_id=352140522561-vpmetjr6bjce1vod9b0cppihhbcgdesh.apps.googleusercontent.com&approval_prompt=force"><i class="fab fa-google"></i></a>
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
+
+                    <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-twitter"></i>
                 </button>
 

@@ -1,6 +1,7 @@
 package model;
 
 public class User  {
+    int id;
     private  String userName;
     private String password;
     private String fullName;
@@ -10,12 +11,13 @@ public class User  {
     private String hash;
     private  String role;
 
-    public User(String userName, String password, String fullName, String email, String tel, boolean isEmail, String hash, String role) {
+    public User(int id, String userName, String password, String fullName, String email, String tel, boolean isEmail, String hash, String role) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
         this.email = email;
-        Tel = tel;
+        this.Tel = tel;
         this.isEmail = isEmail;
         this.hash = hash;
         this.role = role;
@@ -24,11 +26,20 @@ public class User  {
     public User() {
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public User(String fullName) {
         this.fullName = fullName;
     }
 
-    public User(String userName, String password, String fullName, String role) {
+    public User(int id,String userName, String password, String fullName, String role) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
         this.fullName = fullName;
@@ -102,14 +113,15 @@ public class User  {
     @Override
     public String toString() {
         return "User{" +
-                "userName='" + userName + '\'' +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
-                ", Tel=" + Tel +
-                ", role='" + role + '\'' +
-                ", hash='" + hash + '\'' +
+                ", Tel='" + Tel + '\'' +
                 ", isEmail=" + isEmail +
+                ", hash='" + hash + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

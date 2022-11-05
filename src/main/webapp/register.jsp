@@ -18,6 +18,7 @@
                 <i class="far fa-heart text-dark"></i>
             </div>
             <div><%= request.getAttribute("message") %></div>
+            <div id="wait_alert" class="alert alert-info" hidden role="alert">Đang tạo tài khoản cho bạn, vui lòng chờ trong ít giây.</div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                         <div class="col-12">
@@ -60,7 +61,7 @@
 
                                         <div class="row">
                                             <div class="col-12">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-float waves-light">Register</button>
+                                                <button type="submit" id="register" class="btn btn-primary waves-effect waves-float waves-light">Register</button>
                                             </div>
                                         </div>
                                     </form>
@@ -93,13 +94,11 @@
     <script src="app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
 
     <script>
-        $(window).on('load', function() {
-            if (feather) {
-                feather.replace({
-                    width: 14,
-                    height: 14
-                });
-            }
+        $(document).ready(function () {
+            $("#register").click(function () {
+                console.log(1)
+                $("#wait_alert").removeAttr('hidden')
+            })
         })
     </script>
     <script src="app-assets/js/core/app-menu.js"></script>

@@ -75,9 +75,7 @@ public class AccountDAO {
         } catch (Exception e) {
         }
     }
-//    public boolean checkUsername(String username){
-//
-//    }
+
     public boolean addUser(String userName, String password, String fullName, String email, String tel, String hash) {
         String query = "INSERT INTO NGUOIDUNG VALUES (?, ?, ?,?,?,?,?,?);";
 
@@ -164,10 +162,30 @@ public class AccountDAO {
         return true;
     }
 
-
+    public boolean activeMail(String hash){
+        String query = "select * from NGUOIDUNG where hash_string = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, hash);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                String sql_update_mail = "update NGUOIDUNG set is_Email = ? where hash_string = ?";
+                conn = new DBContext().getConnection();
+                ps = conn.prepareStatement(sql_update_mail);
+                ps.setBoolean(1, true);
+                ps.setString(2, hash);
+                ps.executeUpdate();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         AccountDAO dao = new AccountDAO();
-        System.out.println(dao.checkEmail("abcd@gmail.com"));
+        System.out.println(dao.activeMail("071d4160-8d77-448d-b5d2-127fc2d9085f"));
     }
 }

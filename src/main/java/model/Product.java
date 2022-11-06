@@ -1,47 +1,57 @@
 package model;
 
-public class Product {
-    private String productID;
+public class Product{
+
+    private int productID;
     private String productName;
-    private int quantity;
+    private int categoryID;
     private int price;
-    private String category;
-    private String description;
+    private int quantity;
     private String image;
     private boolean status;
+    private String description;
 
-    public Product() {
-    }
-
-    public Product(String productID, String productName, int quantity, int price, String category, String description, String image, boolean status) {
+    public Product(int productID, String productName, int categoryID, int price, int quantity, String image, boolean status, String description) {
         this.productID = productID;
         this.productName = productName;
-        this.quantity = quantity;
+        this.categoryID = categoryID;
         this.price = price;
-        this.category = category;
-        this.description = description;
-        this.image = image;
-        this.status = status;
-    }
-
-    public Product(String productID) {
-
-    }
-
-    public Product(String productName, int quantity, String category, String description, String image, boolean status) {
-        this.productName = productName;
         this.quantity = quantity;
-        this.category = category;
-        this.description = description;
         this.image = image;
         this.status = status;
+        this.description = description;
     }
 
-    public String getProductID() {
+    public Product(String productName, int categoryID, int quantity, String image, boolean status, String description) {
+        this.productName = productName;
+        this.categoryID = categoryID;
+        this.quantity = quantity;
+        this.image = image;
+        this.status = status;
+        this.description = description;
+    }
+    public Product(){
+
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productID=" + productID +
+                ", productName='" + productName + '\'' +
+                ", categoryID=" + categoryID +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", image='" + image + '\'' +
+                ", status=" + status +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+    public int getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(int productID) {
         this.productID = productID;
     }
 
@@ -53,28 +63,28 @@ public class Product {
         this.productName = productName;
     }
 
+    public int getCategoryID() {
+        return categoryID;
+    }
+
+    public void setCategoryID(int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getImage() {
@@ -93,25 +103,11 @@ public class Product {
         this.status = status;
     }
 
-    public int getPrice() {
-        return price;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "Services{" +
-                "productID='" + productID + '\'' +
-                ", productName='" + productName + '\'' +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                ", type='" + category + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                ", status=" + status +
-                '}';
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

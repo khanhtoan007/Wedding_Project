@@ -77,7 +77,7 @@ public class AccountDAO {
     }
 
     public boolean addUser(String userName, String password, String fullName, String email, String tel, String hash) {
-        String query = "INSERT INTO NGUOIDUNG VALUES (?, ?, ?,?,?,?,?,?);";
+        String query = "INSERT INTO NGUOIDUNG VALUES (?, ?, ?,?,?,?,?,?)";
 
         try {
             conn = new DBContext().getConnection();

@@ -1,4 +1,4 @@
-package control.admin;
+package control.admin.user;
 
 import dao.admin.AccountDAO;
 import model.User;

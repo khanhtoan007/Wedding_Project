@@ -1,4 +1,4 @@
-package control.admin;
+package control.admin.user;
 import dao.admin.AccountDAO;
 import model.User;
 import javax.servlet.*;
@@ -24,6 +24,8 @@ public class LoadServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         AccountDAO dao = new AccountDAO();
         List<User> list = dao.getAccountList();
 //        System.out.println(list);

@@ -60,7 +60,6 @@
   <table class="table">
     <thead class="thead-dark">
     <tr>
-      <th>id</th>
       <th>Product Name</th>
       <th>Quantity</th>
       <th>Price</th>
@@ -74,7 +73,6 @@
     <tbody>
     <c:forEach items="${c}" var="i">
       <tr>
-        <td>${i.getProductID()}</td>
         <td>${i.getProductName()}</td>
         <td>${i.getQuantity()}</td>
         <td>${i.getPrice()}</td>

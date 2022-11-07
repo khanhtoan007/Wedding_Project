@@ -39,14 +39,17 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-3">
-                <form>
+                <div>
+                    <%= request.getAttribute("MESSAGE") %>
+                </div>
+                <form action="service" method="post" enctype="multipart/form-data">
                     <div class="row m-1">
                         <label for="name">Nhập tên sản phẩm</label>
-                        <input type="text" v-model="name" id="name" class="form-control" placeholder="name">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="name">
                     </div>
                     <div class="row m-1">
                         <label for="category">Chọn category</label>
-                        <select v-model="cate" name="" id="category">
+                        <select name="category" id="category">
                             <option value="0">Chọn category</option>
                             <template v-for="(value, key) in cate_data">
                                 <option v-bind:value="value.categoryID">{{value.categoryName}}</option>
@@ -55,52 +58,72 @@
                     </div>
                     <div class="row m-1">
                         <label for="price">Nhập giá sản phẩm</label>
-                        <input v-model="price" type="text" class="form-control" id="price" placeholder="price" v-model="price">
+                        <input type="number" class="form-control" name="price" id="price" placeholder="price">
+                    </div>
+                    <div class="row m-1">
+                        <label for="quantity">Nhập số lượng</label>
+                        <input type="number" class="form-control" name="quantity" id="quantity" placeholder="quantity">
                     </div>
                     <div class="row m-1">
                         <label for="description">Nhập description</label>
-                        <input v-model="description" type="text" class="form-control" id="description" placeholder="description"
-                               v-model="description">
+                        <input name="description" type="text" class="form-control" id="description"
+                               placeholder="description">
                     </div>
                     <div class="row m-1">
-                        <label for="myfile">Select a file:</label>
-                        <input type="file" id="myfile" name="myfile">
+                        <label for="myfile">Chọn ảnh đại diện</label>
+                        <input v-on:change="onChange($event)" type="file" id="myfile" name="image">
+                        <div class="col-md-12">
+                            <img hidden="true" id="preview_image" src="" alt="" style="max-width: 100%;">
+                        </div>
                     </div>
                     <div class="row m-1">
                         <label for="status">Chọn trạng thái</label>
-                        <select v-model="status" name="" id="status" class="form-control">
+                        <select name="status" id="status" class="form-control">
                             <option value="0">Disable</option>
                             <option value="1">Enable</option>
                         </select>
                     </div>
-                    <button v-on:click="create($event)" class="btn btn-success">create</button>
+                    <button class="btn btn-success">create</button>
                 </form>
             </div>
             <div class="col-md-9">
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
-                        <th>id</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Act</th>
+                        <th class="col-md-2">Name</th>
+                        <th class="col-md-1">Category</th>
+                        <th class="col-md-2">Price</th>
+                        <th class="col-md-2">Description</th>
+                        <th class="col-md-1">Image (click to view image)</th>
+                        <th class="col-md-1">Quantity</th>
+                        <th class="col-md-1">Status</th>
+                        <th class="col-md-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <template>
+                    <c:forEach items="${list}" var="i">
                         <tr>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>
-                                <button class="btn btn-danger">delete
-                                </button>
-                                <button class="btn btn-warning"
-                                        data-toggle="modal" data-target="#update" type="button">update
-                                </button>
+                            <td class="col-md-2">${i.getProductName()}</td>
+                            <td class="col-md-1">${i.getCategoryID()}</td>
+                            <td class="col-md-2">${i.getPrice()}</td>
+                            <td class="col-md-2">${i.getDescription()}</td>
+                            <td class="col-md-1"><a href="${i.getImage()}">${i.getImage()}</a></td>
+                            <td class="col-md-1">${i.getQuantity()}</td>
+                            <td class="col-md-1">${i.isStatus()}</td>
+                            <td class="col-md-2">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <a href="delete_product?id=${i.getProductID()}">
+                                            <button class="btn btn-danger">delete</button>
+                                        </a>
+                                        <a href="update_product?id=${i.getProductID()}">
+                                            <button class="btn btn-warning">update</button>
+                                        </a>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
-                    </template>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -143,30 +166,14 @@
     var app = new Vue({
         el: "#app",
         data: {
-            name: '',
-            cate: 0,
-            price: 0,
-            description: '',
-            status : 0,
-            file : '',
-            cate_data : []
+            file: '',
+            cate_data: []
         },
         created() {
             this.get_cate_data()
         },
         methods: {
-            create(e){
-                e.preventDefault()
-                var payload = {
-                    'name' : this.name,
-                    'description' : this.description,
-                    'status' : this.status,
-                    'price' : this.price,
-                    'category' : this.cate
-                }
-                console.log(payload)
-            },
-            get_cate_data(){
+            get_cate_data() {
                 var self = this
                 $.ajax({
                     url: 'get_category',
@@ -175,7 +182,14 @@
                         self.cate_data = res
                     }
                 })
-            }
+            },
+            onChange: function (e) {
+                $("#preview_image").removeAttr('hidden');
+                this.file = e.target.files[0];
+                console.log(this.file);
+                var img = document.getElementById('preview_image');
+                img.src = URL.createObjectURL(this.file);
+            },
         }
     })
 </script>

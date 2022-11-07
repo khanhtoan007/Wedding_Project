@@ -23,7 +23,7 @@ public class LogoutServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
-            session.removeAttribute("account");
+            session.removeAttribute("NAME");
             response.sendRedirect("login.jsp");
         }
     }

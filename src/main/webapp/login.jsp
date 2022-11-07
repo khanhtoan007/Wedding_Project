@@ -74,10 +74,10 @@
                                   novalidate="novalidate">
                                 <div class="form-group">
                                     <label class="form-label" for="username">Tài khoản</label>
-                                    <input class="form-control error" id="username" type="text" name="username"
+                                    <input class="form-control" id="username" type="text" name="username"
                                            placeholder="Input Username or Email"
                                            aria-describedby="username username-error" autofocus="" tabindex="1"
-                                           aria-invalid="true"><span id="username-error" class="error">Tên tài khoản không hợp lệ</span>
+                                           aria-invalid="true">
                                 </div>
                                 <div class="form-group">
                                     <div class="d-flex justify-content-between">
@@ -106,7 +106,10 @@
                                         <label class="custom-control-label" for="remember-me"> Ghi nhớ tôi</label>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary btn-block waves-effect waves-float waves-light"
+                                <div>
+                                    <%= request.getAttribute("MESSAGE") %>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block waves-effect waves-float waves-light"
                                         tabindex="4">Đăng nhập
                                 </button>
                             </form>

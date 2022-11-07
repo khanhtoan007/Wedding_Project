@@ -6,6 +6,7 @@ import model.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,7 +39,7 @@ public class ServicesDAO {
         } catch (Exception e) {
         }
         return list;
-    }       //done
+    }
 
     public Product getProductByID(int id) {
         Product product = new Product();
@@ -62,7 +63,7 @@ public class ServicesDAO {
         return product;
     }       //done
 
-    public void deleteProduct(int id) {
+    public boolean deleteProduct(int id) {
         String query = "delete from PRODUCT\n"
                 + "where ProductID = ?";
         try {
@@ -71,23 +72,26 @@ public class ServicesDAO {
             ps.setInt(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
+            return false;
         }
+        return true;
     }       //done
-    public boolean addProduct(String productName, int quantity, int price, String category, String description, String image, boolean status) {
-        String query = "INSERT INTO PRODUCT VALUES (?, ?, ?,?,?,?,?,?)";
+    public boolean addProduct(String productName, int quantity, int price, int category, String description, String image, boolean status) {
+        String query = "INSERT INTO PRODUCT VALUES (?, ?,?,?,?,?,?)";
 
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, productName);
             ps.setInt(2, quantity);
-            ps.setInt(3, price);
-            ps.setString(4, category);
-            ps.setString(5, description);
+            ps.setInt(4, price);
+            ps.setInt(3, category);
+            ps.setString(5, image);
             ps.setBoolean(6, true);
-            ps.setString(7,image);
+            ps.setString(7, description);
             ps.executeUpdate();
         } catch (Exception e) {
+            e.printStackTrace();
             return false;
         }
         return true;
@@ -231,11 +235,12 @@ public class ServicesDAO {
     }
     public static void main(String[] args) {
         dao.admin.ServicesDAO dao = new ServicesDAO();
-        ServicesDAO feedback = new ServicesDAO();
-        List<Product> list = dao.getProductList();
-        System.out.println(dao.getProductID("6"));
-        for (Product o : list) {
-            System.out.println(o);
-        }
+//        ServicesDAO feedback = new ServicesDAO();
+//        List<Product> list = dao.getProductList();
+//        System.out.println(dao.getProductID("6"));
+//        for (Product o : list) {
+//            System.out.println(o);
+//        }
+        System.out.println(dao.deleteProduct(4));
     }
 }

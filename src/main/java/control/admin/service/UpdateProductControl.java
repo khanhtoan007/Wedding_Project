@@ -1,4 +1,4 @@
-package control.admin;
+package control.admin.service;
 
 import dao.admin.ServicesDAO;
 import model.Product;
@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "UpdateProductControl", value = "/UpdateProductControl")
+@WebServlet(name = "UpdateProductControl", value = "/update_product")
 public class UpdateProductControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,8 +16,8 @@ public class UpdateProductControl extends HttpServlet {
 
         ServicesDAO dao = new ServicesDAO();
         Product product1 = dao.getProductByID(product);
-        request.setAttribute("products", product1);
-        request.getRequestDispatcher("updateProduct.jsp").forward(request,response);
+        request.setAttribute("c", product1);
+        request.getRequestDispatcher("manageService.jsp").forward(request,response);
     }
 
     @Override

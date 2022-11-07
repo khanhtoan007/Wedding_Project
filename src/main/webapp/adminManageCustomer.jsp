@@ -23,10 +23,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="adminManageCustomer.jsp">Người dùng</a>
+                <a class="nav-link" href="LoadServlet">Người dùng</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="adminManageStaff.jsp">Nhân viên</a>
+                <a class="nav-link" href="LoadServlet">Nhân viên</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
@@ -34,10 +34,10 @@
         </ul>
     </div>
     <span class="navbar-text mr-3">
-                Welcome, admin
+                Welcome, ${NAME}
     </span>
     <div class="mr-1">
-        <button class="btn btn-danger">Đăng xuất</button>
+        <a class="btn btn-danger" href="LogoutServlet">Đăng xuất</a>
     </div>
 </nav>
 <div class="container">
@@ -89,6 +89,9 @@
 
         </tbody>
     </table>
+    <div class="col-md-12 text-center mb-4">
+        <a class="btn btn-success text-warning" href="">Add User</a>
+    </div>
 </div>
 </body>
 </html>

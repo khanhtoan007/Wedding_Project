@@ -1,25 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package control.admin;
+
+package control.admin.user;
 
 import dao.admin.AccountDAO;
-import model.User;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
 import java.io.IOException;
 
-/**
- *
- * @author FPTSHOP
- */
-@MultipartConfig
-@WebServlet(name = "UpdateControl", urlPatterns = {"/update"})
-public class UpdateControl extends HttpServlet {
+
+@WebServlet(name = "DeleteControl", urlPatterns = {"/DeleteControl"})
+public class DeleteControl extends HttpServlet {
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,25 +31,19 @@ public class UpdateControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int user = Integer.parseInt(request.getParameter("sid"));
-
+        //b1: get sid from jsp
+        int id = Integer.parseInt(request.getParameter("sid"));
+        //b2: pass sid to dao
         AccountDAO dao = new AccountDAO();
-        User list = dao.getCustomerById(user);
-        request.setAttribute("st", list);
-        request.getRequestDispatcher("updateAccount.jsp").forward(request, response);
+        dao.deleteUser(id);
+        response.sendRedirect("LoadServlet");
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        String username = request.getParameter("name");
-        String role = request.getParameter("role");
-        String fullname = request.getParameter("fullname");
-        AccountDAO dao = new AccountDAO();
-        dao.updateUser(id, username, fullname, role);
-        response.sendRedirect("LoadServlet");
-        System.out.println(dao.getAccountList());
+        processRequest(request, response);
     }
 
 }

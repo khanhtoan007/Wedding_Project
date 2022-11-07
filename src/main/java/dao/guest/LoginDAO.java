@@ -17,40 +17,58 @@ public class LoginDAO {
     ResultSet rs = null;
 
         //=============Login DAO=============
-    public User checkLogin(String user, String password){
-        boolean isValid = false;
-        String query = "select * from NGUOIDUNG where username = ? or email = ? and password = ?";
+    public boolean checkLogin(String user, String password){
+        String query = "select * from NGUOIDUNG where username = ? and password = ?";
         try{
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
             ps.setString(1, user);
-            ps.setString(2, user);;
-            ps.setString(3,password);
+            ps.setString(2,password);
             rs = ps.executeQuery();
-            while (rs.next()) {
-                return  new User(
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
+        return false;
+    }//check user ton tai trong db
+
+    public User getUserInfo(String username, String password){
+        String query = "select * from NGUOIDUNG where username = ? and password = ?";
+        User user = new User();
+        try{
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, username);
+            ps.setString(2,password);
+            rs = ps.executeQuery();
+            if (rs.next()){
+               user = new User(
                         rs.getInt(1),
                         rs.getString(2),
-                        rs.getString(3),                        rs.getString(4),
+                        rs.getString(3),
+                        rs.getString(4),
                         rs.getString(5),
                         rs.getString(6),
                         rs.getBoolean(7),
                         rs.getString(8),
                         rs.getString(9)
-                );
+                        );
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        return null;
+        return user;
     }
 
 
     public static void main(String[] args) {
         LoginDAO dao = new LoginDAO();
         User us = new User();
-        System.out.println(dao.checkLogin("staff", "staff"));
+        System.out.println(dao.checkLogin("admin", "123"));
+        System.out.println(dao.getUserInfo("admin", "123").getRole());
     }
 }

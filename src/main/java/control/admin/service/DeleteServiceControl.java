@@ -1,16 +1,19 @@
 
-package control.admin;
+package control.admin.service;
 
 import dao.admin.AccountDAO;
-import javax.servlet.*;
-import javax.servlet.annotation.*;
-import javax.servlet.http.*;
+import dao.admin.ServicesDAO;
 
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "DeleteControl", urlPatterns = {"/DeleteControl"})
-public class DeleteControl extends HttpServlet {
+@WebServlet(name = "DeleteControl", urlPatterns = {"/delete_product"})
+public class DeleteServiceControl extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -31,12 +34,10 @@ public class DeleteControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //b1: get sid from jsp
-        int id = Integer.parseInt(request.getParameter("sid"));
-        //b2: pass sid to dao
-        AccountDAO dao = new AccountDAO();
-        dao.deleteUser(id);
-        response.sendRedirect("LoadServlet");
+        int id = Integer.parseInt(request.getParameter("id"));
+        ServicesDAO dao = new ServicesDAO();
+        dao.deleteProduct(id);
+        response.sendRedirect("service");
     }
 
 

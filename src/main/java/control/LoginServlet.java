@@ -8,49 +8,52 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("message", "");
+        request.setAttribute("MESSAGE", "");
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String url = "";
-    String accountuser = request.getParameter("username");
-    String password = request.getParameter("password");
-    System.out.println(accountuser + " - " + password);
-
-    LoginDAO dao = new LoginDAO();
-    User user = dao.checkLogin(accountuser,password);
-
-         if (null != user) {
-                if (user.getRole() == "Admin") {
-                    System.out.println("IS admin: " + user.getRole());
+        String accountuser = request.getParameter("username");
+        String password = request.getParameter("password");
+        System.out.println(accountuser + " - " + password);
+        LoginDAO dao = new LoginDAO();
+        boolean isValid = dao.checkLogin(accountuser, password);
+        boolean checkEmail = dao.getUserInfo(accountuser,password).isEmail();
+        User user = dao.getUserInfo(accountuser,password);
+        System.out.println(dao.getUserInfo(accountuser,password).getRole());
+        if (isValid){
+            if (checkEmail){
+                if (user.getRole().equalsIgnoreCase("Admin")){
+                    System.out.println("vao admin");
                     HttpSession session = request.getSession();
-                    session.setAttribute("NAME", user);
-                    url = "LoadServlet";
-                } else if (user.getRole()=="User"){
-                    System.out.println("IS admin: " + user.getRole());
+                    session.setAttribute("NAME", accountuser);
+                    response.sendRedirect("LoadServlet");
+                } else if (user.getRole().equalsIgnoreCase("User")){
                     HttpSession session = request.getSession();
-                    session.setAttribute("NAME", user);
-                    url = "UserHome";
+                    session.setAttribute("NAME", accountuser);
+                    RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+                    rd.forward(request,response);
                 } else {
-                    System.out.println("Is staff" + user.getRole());
                     HttpSession session = request.getSession();
-                    session.setAttribute("NAME", user);
-                    url = "LoadServlet";
+                    session.setAttribute("NAME", accountuser);
+                    RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+                    rd.forward(request,response);
                 }
+            } else {
+                System.out.println("chuwa active mail");
+                request.setAttribute("MESSAGE","Bạn phải xác nhận <a href=\"/active\">email</a> trước, bước này chỉ chưa đầy 1 phút thôi ạ !");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
         } else {
-            url = "login.jsp";
-            request.setAttribute("alert", "danger");
-            request.setAttribute("MESSAGE", "<span><i class=\"bi text-warning bi-exclamation-triangle-fill\"></i></span> LOGIN FAIL");
+            System.out.println("sai mk");
+            request.setAttribute("MESSAGE", "<span><i class=\"bi text-warning bi-exclamation-triangle-fill\"></i></span> LOGIN FAIL! Sai tên tài khoản hoặc mật khẩu");
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
-
-        System.out.println("url " + url);
-        RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request, response);
     }
 }

@@ -1,5 +1,5 @@
 
-package control.admin;
+package control.admin.service;
 
 import dao.admin.ServicesDAO;
 import model.Product;
@@ -44,7 +44,7 @@ public class AddProductControl extends HttpServlet {
         String url = "";
         String productname = request.getParameter("name");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        String category = request.getParameter("category");
+        int category = Integer.parseInt(request.getParameter("category"));
         int price = Integer.parseInt(request.getParameter("price"));
         boolean status = Boolean.parseBoolean(request.getParameter("status"));
         String description = request.getParameter("description");

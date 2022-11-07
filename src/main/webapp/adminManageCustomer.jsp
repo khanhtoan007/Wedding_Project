@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.util.UUID" %><%--
   Created by IntelliJ IDEA.
   User: tranm
   Date: 10/28/2022
@@ -67,7 +67,7 @@
             <th>Tel</th>
             <th>Confirm Email</th>
             <th>Role</th>
-            <th class="text-center">action</th>
+            <th colspan="2">action</th>
         </tr>
         </thead>
         <tbody>
@@ -90,8 +90,62 @@
         </tbody>
     </table>
     <div class="col-md-12 text-center mb-4">
-        <a class="btn btn-success text-warning" href="">Add User</a>
+        <button class="btn btn-success text-warning" data-target="#addForm" data-toggle="modal">Add User</button>
+    </div>
+
+
+    <div class="form-modal-ex">
+        <!-- Modal -->
+        <div class="modal fade text-left" id="addForm" tabindex="-1" aria-labelledby="myModalLabel33"
+             style="display: none;" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel34">Thêm Người dùng</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                        </div>
+                        <form action="LoadServlet" method="post">
+                            <div class="row m-1">
+                                <label for="name">Tên tài khoản</label>
+                                <input type="text" id="name" name="username" class="form-control" placeholder="name">
+                            </div>
+                            <div class="row m-1">
+                                <label for="price">Mật khẩu</label>
+                                <input type="password" class="form-control" name="password" id="price" placeholder="password">
+                            </div>
+                            <div class="row m-1">
+                                <label>Họ tên Người dùng</label>
+                                <input type="text" class="form-control" name="fullname" placeholder="fullname">
+                            </div>
+                            <div class="row m-1">
+                                <label for="description">Email</label>
+                                <input name="email" type="text" class="form-control" id="description"
+                                       placeholder="email">
+                            </div>
+                            <div class="row m-1">
+                                <label for="description">Số điện thoại</label>
+                                <input name="tel" type="text" class="form-control"
+                                       placeholder="tel">
+                            </div>
+                            <button type="submit" class="btn btn-success">create</button>
+                            <a class="btn btn-warning" href="LoadServlet">Back to Manage User</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<script src="../../../app-assets/vendors/js/vendors.min.js"></script>
+<script src="../../../app-assets/js/core/app-menu.js"></script>
+<script src="../../../app-assets/js/core/app.js"></script>
+<script src="../../../app-assets/js/scripts/forms/form-tooltip-valid.js"></script>
 </body>
 </html>

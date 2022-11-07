@@ -87,7 +87,7 @@ public class ServicesDAO {
             ps.setInt(4, price);
             ps.setInt(3, category);
             ps.setString(5, image);
-            ps.setBoolean(6, true);
+            ps.setBoolean(6, status);
             ps.setString(7, description);
             ps.executeUpdate();
         } catch (Exception e) {

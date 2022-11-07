@@ -7,4 +7,8 @@
         <servlet-name>AccessGoogle</servlet-name>
         <url-pattern>/AccessGoogle/login-google</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteControl</servlet-name>
+        <url-pattern>/DeleteControl</url-pattern>
+    </servlet-mapping>
 </web-app>

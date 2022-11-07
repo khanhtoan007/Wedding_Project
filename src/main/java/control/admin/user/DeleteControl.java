@@ -36,7 +36,8 @@ public class DeleteControl extends HttpServlet {
         //b2: pass sid to dao
         AccountDAO dao = new AccountDAO();
         dao.deleteUser(id);
-        response.sendRedirect("LoadServlet");
+        RequestDispatcher rd = request.getRequestDispatcher("LoadServlet");
+        rd.forward(request,response);
     }
 
 

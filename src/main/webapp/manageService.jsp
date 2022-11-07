@@ -62,10 +62,10 @@
         </ul>
     </div>
     <span class="navbar-text mr-3">
-                Welcome, admin
+                Welcome, ${NAME}
     </span>
     <div class="mr-1">
-        <button class="btn btn-danger">Đăng xuất</button>
+        <a href="LogoutServlet" class="btn btn-danger">Đăng xuất</a>
     </div>
 </nav>
 <div class="container mt-5">
@@ -76,7 +76,7 @@
         <form class="form-inline">
             <input class="form-control" type="search" placeholder="Điền vào dịch vụ" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-            <a class="btn btn-success" href="service">Thêm sản phẩm</a>
+            <a class="btn btn-success" data-toggle="modal" data-target="#addForm">Thêm sản phẩm</a>
         </form>
     </div>
     <div class="table-responsive">
@@ -95,7 +95,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${list}" var="i">
+            <c:forEach items="${c}" var="i">
                 <tr>
                     <td>${i.getProductID()}</td>
                     <td>
@@ -106,6 +106,7 @@
                     <td>
                         <div class="col-md-12">
                             <img src="${i.getImage()}" style="max-width: 100%">
+                            <img hidden="true" id="view_image" src="" alt="" style="max-width: 100%;">
                         </div>
                     </td>
                     <td>${i.getQuantity()}</td>
@@ -127,7 +128,7 @@
                                 data-target="#updateForm">
                             Sửa
                         </button>
-                        <a href="DeleteControl?sid=${i.getProductID()}">
+                        <a href="delete_product?id=${i.getProductID()}">
                             <button type="button" class="btn btn-secondary waves-effect">
                                 Xóa
                             </button>
@@ -139,7 +140,10 @@
         </table>
     </div>
 </div>
-<%--MODAL UPDATE DỊCH VỤ Ở ĐÂY  UPDATE DELETE  --%>
+
+
+
+<%--MODAL UPDATE DỊCH VỤ Ở ĐÂY  UPDATE & DELETE  --%>
 <div class="form-modal-ex">
     <!-- Modal -->
     <div class="modal fade text-left" id="updateForm" tabindex="-1" aria-labelledby="myModalLabel33"
@@ -188,7 +192,7 @@
                             <div class="col-12">
                                 <div class="form-group row">
                                     <div class="col-lg-3">
-                                        <input type="text" class="form-control" value="${i.getCategory()}">
+                                        <input type="text" class="form-control" value="${i.getCategoryID()}">
                                     </div>
                                 </div>
                             </div>
@@ -204,6 +208,7 @@
                             <div class="form-group row">
                                 <div class="col-lg-3">
                                     <input type="text" class="form-control" value="${i.getImage()}">
+                                    <img hidden="true" id="preview_image" src="" alt="" style="max-width: 100%;">
                                 </div>
                             </div>
                         </div>
@@ -250,6 +255,76 @@
 </div>
 </div>
 <%--KẾT THÚC MODAL UPDATE DỊCH VỤ--%>
+
+
+
+
+<%--MODAL ADD DỊCH VỤ Ở ĐÂY  --%>
+<div class="form-modal-ex">
+    <!-- Modal -->
+    <div class="modal fade text-left" id="addForm" tabindex="-1" aria-labelledby="myModalLabel33"
+         style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel34">Thêm dịch vụ/sản phẩm</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <%= request.getAttribute("MESSAGE") %>
+                    </div>
+                    <form action="service" method="post" enctype="multipart/form-data">
+                        <div class="row m-1">
+                            <label for="name">Nhập tên sản phẩm</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="name">
+                        </div>
+                        <div class="row m-1">
+                            <label for="category">Chọn category</label>
+                            <select name="category" id="category">
+                                <option value="0">Chọn category</option>
+                                <template v-for="(value, key) in cate_data">
+                                    <option v-bind:value="value.categoryID">{{value.categoryName}}</option>
+                                </template>
+                            </select>
+                        </div>
+                        <div class="row m-1">
+                            <label for="price">Nhập giá sản phẩm</label>
+                            <input type="number" class="form-control" name="price" id="price" placeholder="price">
+                        </div>
+                        <div class="row m-1">
+                            <label for="quantity">Nhập số lượng</label>
+                            <input type="number" class="form-control" name="quantity" id="quantity" placeholder="quantity">
+                        </div>
+                        <div class="row m-1">
+                            <label for="description">Nhập description</label>
+                            <input name="description" type="text" class="form-control" id="description"
+                                   placeholder="description">
+                        </div>
+                        <div class="row m-1">
+                            <label for="myfile">Chọn ảnh đại diện</label>
+                            <input v-on:change="onChange($event)" type="file" id="myfile" name="image">
+                            <div class="col-md-12">
+                                <img hidden="true"  src="" alt="" style="max-width: 100%;">
+                            </div>
+                        </div>
+                        <div class="row m-1">
+                            <label for="status">Chọn trạng thái</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="0">Disable</option>
+                                <option value="1">Enable</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-success">create</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<%--KẾT THÚC MODAL ADD DỊCH VỤ--%>
 
 <jsp:include page="view/script.jsp"/>
 

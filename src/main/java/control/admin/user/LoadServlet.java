@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
 
 
 @WebServlet(name = "LoadServlet", urlPatterns = {"/LoadServlet"})
@@ -32,10 +33,6 @@ public class LoadServlet extends HttpServlet {
         request.setAttribute("list", list);
         request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
 
-//        request.setAttribute("listS", list);
-//        request.getRequestDispatcher("listStudent.jsp").forward(request, response);
-//        request.setAttribute("list", list);
-//        request.getRequestDispatcher("adminManageCustomer.jsp").forward(request, response);
 
 
     }
@@ -44,6 +41,16 @@ public class LoadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String fullname = request.getParameter("fullname");
+        String email = request.getParameter("email");
+        String tel = request.getParameter("tel");
+        String hash = UUID.randomUUID().toString();
+
+        AccountDAO dao = new AccountDAO();
+        dao.addUser(username,password,fullname, email, tel, hash);
+        request.getRequestDispatcher("LoadServlet").forward(request,response);
     }
 
 

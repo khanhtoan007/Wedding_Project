@@ -19,7 +19,7 @@ public class ServiceServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> list = new ServicesDAO().getProductList();
-        request.setAttribute("list", list);
+        request.setAttribute("c", list);
         request.getRequestDispatcher("manageService.jsp").forward(request, response);
     }
 
@@ -32,10 +32,6 @@ public class ServiceServlet extends HttpServlet {
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         boolean status = Boolean.parseBoolean(request.getParameter("status"));
         String description = request.getParameter("description");
-        System.out.println(name);
-        System.out.println(price);
-        System.out.println(cate);
-        System.out.println(description);
         Part part = request.getPart("image");
         String realPath = request.getServletContext().getRealPath("/image");
         String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString();
@@ -47,13 +43,6 @@ public class ServiceServlet extends HttpServlet {
             part.write(realPath + "/" + fileName);
             System.out.println(realPath + "/" + fileName);
         }
-        System.out.println(name);
-        System.out.println(quantity);
-        System.out.println(price);
-        System.out.println(cate);
-        System.out.println(description);
-        System.out.println(("image/" + fileName));
-        System.out.println(status);
         boolean check_status = new ServicesDAO().addProduct(name, quantity, price, cate, description, ("image/" + fileName), status);
         System.out.println(status);
         if (check_status){

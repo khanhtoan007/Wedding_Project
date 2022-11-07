@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "DeleteControl", urlPatterns = {"/delete_product"})
+@WebServlet(name = "DeleteProduct", urlPatterns = {"/delete_product"})
 public class DeleteServiceControl extends HttpServlet {
 
 

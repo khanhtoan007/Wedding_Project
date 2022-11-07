@@ -188,7 +188,9 @@
                 this.file = e.target.files[0];
                 console.log(this.file);
                 var img = document.getElementById('preview_image');
+                var image = document.getElementById('view_image');
                 img.src = URL.createObjectURL(this.file);
+                image.src = URL.createObjectURL(this.file);
             },
         }
     })

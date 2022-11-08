@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
+<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
@@ -32,6 +33,13 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+=======
+    <title>Manage Customer</title>
+    <meta charset="UTF-8">
+    <jsp:include page="view/header.jsp"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all">
+>>>>>>> 8ae7e3cb249210a583a1d0540505477495722369
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

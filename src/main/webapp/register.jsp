@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
 <html>
 <head>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
     <jsp:include page="view/header.jsp"/>
 </head>
 <body>

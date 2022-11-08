@@ -20,7 +20,7 @@ public class ServiceServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> list = new ServicesDAO().getProductList();
         request.setAttribute("c", list);
-        request.getRequestDispatcher("manageService.jsp").forward(request, response);
+        request.getRequestDispatcher("adminManageServices.jsp").forward(request, response);
     }
 
     @Override
@@ -44,7 +44,6 @@ public class ServiceServlet extends HttpServlet {
             System.out.println(realPath + "/" + fileName);
         }
         boolean check_status = new ServicesDAO().addProduct(name, quantity, price, cate, description, ("image/" + fileName), status);
-        System.out.println(status);
         if (check_status){
             request.setAttribute("MESSAGE", "<div class=\"alert alert-success\" role=\"alert\">Thêm mới dịch vụ thành công</div>");
             request.getRequestDispatcher("adminManageServices.jsp").forward(request, response);

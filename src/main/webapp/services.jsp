@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: FPTSHOP
@@ -164,7 +165,7 @@
                     <div class="card ecommerce-card">
                         <div class="item-img text-center">
                             <a href="app-ecommerce-details.html">
-                                <img class="img-fluid card-img-top" src="../../../app-assets/images/pages/eCommerce/2.png" alt="img-placeholder">
+                                <img class="img-fluid card-img-top" style="max-width: 100%" src="../../../app-assets/images/pages/eCommerce/2.png" alt="img-placeholder">
                             </a>
                         </div>
                         <div class="card-body">
@@ -209,9 +210,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="card ecommerce-card">
+                    <c:forEach items="" var="i">
+                        <div class="card ecommerce-card">
                         <div class="item-img text-center">
-                            <a href="app-ecommerce-details.html"><img class="img-fluid card-img-top" src="../../../app-assets/images/pages/eCommerce/3.png" alt="img-placeholder"></a>
+                            <a href="app-ecommerce-details.html"><img class="img-fluid card-img-top" alt="img-placeholder">${i.getImage()}</a>
                         </div>
                         <div class="card-body">
                             <div class="item-wrapper">
@@ -259,6 +261,7 @@
                             </a>
                         </div>
                     </div>
+                    </c:forEach>
                     <div class="card ecommerce-card">
                         <div class="item-img text-center">
                             <a href="app-ecommerce-details.html">

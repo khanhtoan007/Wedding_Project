@@ -5,8 +5,7 @@
     <title>Manage Customer</title>
     <meta charset="UTF-8">
     <jsp:include page="view/header.jsp"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all"
-          charset="">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -92,22 +91,22 @@
                     <tr>
                         <th class="col-md-2">Name</th>
                         <th class="col-md-1">Category</th>
-                        <th class="col-md-2">Price</th>
+                        <th class="col-md-1">Price</th>
                         <th class="col-md-2">Description</th>
-                        <th class="col-md-1">Image (click to view image)</th>
+                        <th class="col-md-2">Image</th>
                         <th class="col-md-1">Quantity</th>
                         <th class="col-md-1">Status</th>
                         <th class="col-md-2">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${list}" var="i">
+                    <c:forEach items="${c}" var="i">
                         <tr>
                             <td class="col-md-2">${i.getProductName()}</td>
                             <td class="col-md-1">${i.getCategoryID()}</td>
-                            <td class="col-md-2">${i.getPrice()}</td>
+                            <td class="col-md-1">${i.getPrice()}</td>
                             <td class="col-md-2">${i.getDescription()}</td>
-                            <td class="col-md-1"><a href="${i.getImage()}">${i.getImage()}</a></td>
+                            <td class="col-md-2"><a href="${i.getImage()}"><img style="max-width: 100%" src="${i.getImage()}"></a></td>
                             <td class="col-md-1">${i.getQuantity()}</td>
                             <td class="col-md-1">${i.isStatus()}</td>
                             <td class="col-md-2">

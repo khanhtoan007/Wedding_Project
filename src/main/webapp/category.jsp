@@ -5,6 +5,7 @@
     <title>Manage Customer</title>
     <meta charset="UTF-8">
     <jsp:include page="view/header.jsp"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" rel="stylesheet" media="all"
           charset="">
 </head>

@@ -9,6 +9,7 @@
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
     <title>Title</title>
 </head>
 <body>

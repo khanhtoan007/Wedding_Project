@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
           rel="stylesheet">
 
@@ -62,7 +62,7 @@
                     <!-- Left Text-->
                     <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
                         <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
-                            <img class="img-fluid" style="max-width: 100%; max-height: 100%" src="img/loginhome_v3.png" alt="Login V2">
+                            <img class="img-fluid" style="max-width: 100%; max-height: 100%" src="img/anhcuoilogin.jpg" alt="Login V2">
                         </div>
                     </div>
                     <!-- /Left Text-->

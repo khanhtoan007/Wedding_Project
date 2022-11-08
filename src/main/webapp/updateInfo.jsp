@@ -5,14 +5,12 @@
   Time: 9:15 PM
   To change this template use File | Settings | File Templates.
 --%>
-<<<<<<< HEAD
 <%@ page contentType="text/html;charset=UTF-8" %>
-=======
 <%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
->>>>>>> 7e1f29f809ac87af929dc3f2cd1677925b502f41
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
     <title>Update Info</title>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -33,28 +31,28 @@
                                 <div class="form-group">
                                     <label for="name">Họ và tên</label>
                                     <input type="text" id="name" class="form-control"
-                                           name="name" value="Trần Minh Quốc">
+                                           name="name" placeholder="Trần Minh Quốc">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input type="text" id="email" class="form-control"
-                                           name="email" value="quoc@gmail.com">
+                                           name="email" placeholder="quoc@gmail.com">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label for="telnum">Số điện thoại</label>
                                     <input type="number" id="telnum" class="form-control"
-                                           name="telnum" value="0868515361">
+                                           name="telnum" placeholder="0868515361">
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
                                     <label for="password">Mật khẩu</label>
                                     <input type="password" id="password" class="form-control"
-                                           name="password" value="quocdeptrai">
+                                           name="password" placeholder="quocdeptrai">
                                 </div>
                             </div>
                             <div class="col-12">

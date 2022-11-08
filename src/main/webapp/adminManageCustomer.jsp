@@ -12,6 +12,7 @@
 <head>
     <jsp:include page="view/header.jsp"/>
     <title>Manage Customer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -62,8 +62,8 @@
                     <!-- Left Text-->
                     <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
                         <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
-                            <img class="img-fluid" style="max-width: 100%; max-height: 100%" src="img/loginhome_v3.png" alt="Login V2">
-                        </div>
+                            <img class="img-fluid" style="max-width: 100%; max-height: 100%" src="img/anhcuoilogin.jpg" alt="Login V2">
+                        </div>  
                     </div>
                     <!-- /Left Text-->
                     <!-- Login-->

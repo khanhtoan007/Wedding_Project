@@ -2,6 +2,7 @@ package Filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionContext;
 import java.io.IOException;
@@ -15,96 +16,39 @@ public class Auth implements Filter {
     public void destroy() {
     }
 
+
+
+    private static final boolean debug = true;
+    private final String loginPage = "login.jsp";
+    private final FilterConfig filterConfig = null;
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         chain.doFilter(request, response);
-        HttpSession session = new HttpSession() {
-            @Override
-            public long getCreationTime() {
-                return 0;
+        HttpServletRequest req = (HttpServletRequest) request;
+        String uri = req.getRequestURI();
+        String url = loginPage;
+
+        try {
+            int lastIndex = uri.lastIndexOf("/");
+            String resource = uri.substring(lastIndex + 1);
+            if (resource.length() > 0){
+                url = resource.substring(0,1).toUpperCase()
+                        + resource.substring(1)
+                        +"Servlet";
+                if(resource.lastIndexOf(".jsp")>0){
+                    url=resource;
+                }
             }
 
-            @Override
-            public String getId() {
-                return null;
+            if(url != null){
+                RequestDispatcher rd = req.getRequestDispatcher(url);
+                rd.forward(request, response);
+            } else {
+                chain.doFilter(request,response);
             }
-
-            @Override
-            public long getLastAccessedTime() {
-                return 0;
-            }
-
-            @Override
-            public ServletContext getServletContext() {
-                return null;
-            }
-
-            @Override
-            public void setMaxInactiveInterval(int i) {
-
-            }
-
-            @Override
-            public int getMaxInactiveInterval() {
-                return 0;
-            }
-
-            @Override
-            public HttpSessionContext getSessionContext() {
-                return null;
-            }
-
-
-            @Override
-            public Object getAttribute(String s) {
-                return null;
-            }
-
-            @Override
-            public Object getValue(String s) {
-                return null;
-            }
-
-            @Override
-            public Enumeration<String> getAttributeNames() {
-                return null;
-            }
-
-            @Override
-            public String[] getValueNames() {
-                return new String[0];
-            }
-
-            @Override
-            public void setAttribute(String s, Object o) {
-
-            }
-
-            @Override
-            public void putValue(String s, Object o) {
-
-            }
-
-            @Override
-            public void removeAttribute(String s) {
-
-            }
-
-            @Override
-            public void removeValue(String s) {
-
-            }
-
-            @Override
-            public void invalidate() {
-
-            }
-
-            @Override
-            public boolean isNew() {
-                return false;
-            }
-        };
+        } catch (Throwable t){
+            t.printStackTrace();
+        }
 
     }
 }

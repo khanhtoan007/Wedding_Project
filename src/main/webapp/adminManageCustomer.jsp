@@ -23,13 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="LoadServlet">Người dùng</a>
+                <a class="nav-link active" href="LoadServlet">Người dùng</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="LoadServlet">Nhân viên</a>
+                <a class="nav-link" href="#">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="service">Sản phẩm</a>
             </li>
         </ul>
     </div>

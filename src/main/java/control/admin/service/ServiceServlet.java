@@ -44,12 +44,16 @@ public class ServiceServlet extends HttpServlet {
             System.out.println(realPath + "/" + fileName);
         }
         boolean check_status = new ServicesDAO().addProduct(name, quantity, price, cate, description, ("image/" + fileName), status);
+        String msg = "";
+        request.setAttribute("MESSAGE", msg);
         if (check_status){
-            request.setAttribute("MESSAGE", "<div class=\"alert alert-success\" role=\"alert\">Thêm mới dịch vụ thành công</div>");
-            request.getRequestDispatcher("adminManageServices.jsp").forward(request, response);
+            msg = "<div class=\"alert alert-success\" role=\"alert\">Thêm mới dịch vụ thành công</div>";
+            request.setAttribute("MESSAGE",msg );
+            request.getRequestDispatcher("/service").forward(request, response);
         } else {
-            request.setAttribute("MESSAGE", "<div class=\"alert alert-danger\" role=\"alert\">Có lỗi gì đó</div>");
-            request.getRequestDispatcher("adminManageServices.jsp").forward(request, response);
+            msg = "<div class=\"alert alert-danger\" role=\"alert\">Có lỗi gì đó</div>";
+            request.setAttribute("MESSAGE", msg);
+            request.getRequestDispatcher("/service").forward(request, response);
         }
     }
 }

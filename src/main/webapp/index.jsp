@@ -3,6 +3,7 @@
 <html>
 <head>
     <jsp:include page="view/header.jsp"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
 </head>
 <body>
 <h1><%= "Hello World!" %>

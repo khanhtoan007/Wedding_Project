@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
 </head>
 <body>
 <form action="active" method="post">

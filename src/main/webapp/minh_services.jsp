@@ -136,26 +136,41 @@
                 <!-- E-commerce Search Bar Starts -->
                 <section id="ecommerce-searchbar" class="ecommerce-searchbar">
                     <div class="row mt-1">
-                        <form action="SearchProductServlet" method="post">
+                        <form action="SearchProductServlet" method="post" class="col-md-6">
                             <div class="col-sm-12">
-                            <div class="input-group input-group-merge">
-                                <input type="text" class="form-control search-product" id="shop-search"
-                                       placeholder="Search Product" name="name" aria-label="Search..."
-                                       aria-describedby="shop-search">
-                                <div class="input-group-append">
-                                    <button>
-                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14"
-                                                                                                                height="14" viewBox="0 0 24 24" fill="none"
-                                                                                                                stroke="currentColor" stroke-width="2"
-                                                                                                                stroke-linecap="round" stroke-linejoin="round"
-                                                                                                                class="feather feather-search text-muted"><circle
-                                                                                    cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65"
-                                                                                                                         y2="16.65"></line></svg></span>
-                                    </button>
+                                <div class="input-group input-group-merge">
+                                    <input type="text" class="form-control search-product" id="shop-search"
+                                           placeholder="Search Product" name="name" aria-label="Search..."
+                                           aria-describedby="shop-search">
+                                    <div class="input-group-append">
+                                        <button>
+                                        <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                            width="14"
+                                                                            height="14" viewBox="0 0 24 24" fill="none"
+                                                                            stroke="currentColor" stroke-width="2"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            class="feather feather-search text-muted"><circle
+                                                cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65"
+                                                                                     y2="16.65"></line></svg></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </form>
+                        <div class="row ml-auto">
+                            <div class="icon-wrapper col-md-2 content-right">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="feather feather-shopping-cart">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <!-- E-commerce Search Bar Ends -->
@@ -163,56 +178,106 @@
                 <!-- E-commerce Products Starts -->
                 <c:forEach items="${c}" var="i">
                     <section id="ecommerce-products" class="list-view">
-                    <div class="card ecommerce-card">
-                        <div class="item-img text-center">
-                            <a href="">
-                                <img class="img-fluid card-img-top" src="${i.getImage()}" alt="img-placeholder"></a>
-                        </div>
-                        <div class="card-body">
-                            <div class="item-wrapper">
-                                <div class="item-rating">
-                                    <ul class="unstyled-list list-inline">
-                                        <li class="ratings-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star filled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></li>
-                                        <li class="ratings-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star filled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></li>
-                                        <li class="ratings-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star filled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></li>
-                                        <li class="ratings-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star filled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></li>
-                                        <li class="ratings-list-item"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star unfilled-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h6 class="item-price">${i.getPrice()}</h6>
-                                </div>
+                        <div class="card ecommerce-card">
+                            <div class="item-img text-center">
+                                <a href="">
+                                    <img class="img-fluid card-img-top" src="${i.getImage()}" alt="img-placeholder"></a>
                             </div>
-                            <h6 class="item-name">
-                                <a class="text-body" href="app-ecommerce-details.html">${i.getProductName()}</a>
-                                 <span class="card-text item-company">Category : <a href="javascript:void(0)" class="company-name">${i.getCategoryName()}</a></span>
-                            </h6>
-                            <p class="card-text font-medium-3 item-description">
-                                ${i.getDescription()}
-                            </p>
-                        </div>
-                        <div class="item-options text-center">
-                            <div class="item-wrapper">
-                                <div class="item-cost">
-                                    <h4 class="item-price">${i.getPrice()}$</h4>
+                            <div class="card-body">
+                                <div class="item-wrapper">
+                                    <div class="item-rating">
+                                        <ul class="unstyled-list list-inline">
+                                            <li class="ratings-list-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-star filled-star">
+                                                    <polygon
+                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                </svg>
+                                            </li>
+                                            <li class="ratings-list-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-star filled-star">
+                                                    <polygon
+                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                </svg>
+                                            </li>
+                                            <li class="ratings-list-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-star filled-star">
+                                                    <polygon
+                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                </svg>
+                                            </li>
+                                            <li class="ratings-list-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-star filled-star">
+                                                    <polygon
+                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                </svg>
+                                            </li>
+                                            <li class="ratings-list-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                     class="feather feather-star unfilled-star">
+                                                    <polygon
+                                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h6 class="item-price">${i.getPrice()}</h6>
+                                    </div>
                                 </div>
+                                <h6 class="item-name">
+                                    <a class="text-body" href="app-ecommerce-details.html">${i.getProductName()}</a>
+                                    <span class="card-text item-company">Category : <a href="javascript:void(0)"
+                                                                                       class="company-name">${i.getCategoryName()}</a></span>
+                                </h6>
+                                <p class="card-text font-medium-3 item-description">
+                                        ${i.getDescription()}
+                                </p>
                             </div>
-                            <a href="javascript:void(0)" class="btn btn-light btn-wishlist waves-effect waves-float waves-light">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                <span>Wishlist</span>
-                            </a>
-                            <a href="javascript:void(0)" class="btn btn-primary btn-cart waves-effect waves-float waves-light">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                                <span class="add-to-cart">Add to cart</span>
-                            </a>
+                            <div class="item-options text-center">
+                                <div class="item-wrapper">
+                                    <div class="item-cost">
+                                        <h4 class="item-price">${i.getPrice()}$</h4>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0)"
+                                   class="btn btn-light btn-wishlist waves-effect waves-float waves-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-heart">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                    <span>Wishlist</span>
+                                </a>
+                                <a href="javascript:void(0)"
+                                   class="btn btn-primary btn-cart waves-effect waves-float waves-light">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="feather feather-shopping-cart">
+                                        <circle cx="9" cy="21" r="1"></circle>
+                                        <circle cx="20" cy="21" r="1"></circle>
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                    </svg>
+                                    <span class="add-to-cart">Add to cart</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
                 </c:forEach>
-
                 <!-- E-commerce Products Ends -->
-
-
                 <!-- E-commerce Pagination Starts -->
                 <section id="ecommerce-pagination">
                     <div class="row">
@@ -255,7 +320,7 @@
         <button type="button" class="btn cancel" onclick="closeForm()">Đóng chat</button>
     </form>
 </div>
-<button class="open-button" onclick="openForm()">
+<button class="open-button" onclick="openForm()" id="myButton">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>

@@ -13,6 +13,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("message", "");
         request.setAttribute("MESSAGE", "");
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
@@ -37,8 +38,7 @@ public class LoginServlet extends HttpServlet {
                 } else if (user.getRole().equalsIgnoreCase("User")){
                     HttpSession session = request.getSession();
                     session.setAttribute("NAME", accountuser);
-                    RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-                    rd.forward(request,response);
+                    response.sendRedirect("home.jsp");
                 } else {
                     HttpSession session = request.getSession();
                     session.setAttribute("NAME", accountuser);
@@ -46,14 +46,16 @@ public class LoginServlet extends HttpServlet {
                     rd.forward(request,response);
                 }
             } else {
-                System.out.println("chuwa active mail");
-                request.setAttribute("MESSAGE","Bạn phải xác nhận <a href=\"/active\">email</a> trước, bước này chỉ chưa đầy 1 phút thôi ạ !");
+                System.out.println("chưa active mail");
+                request.setAttribute("message", "");
+                request.setAttribute("MESSAGE","Bạn phải <a href=\"/active\">xác nhận email</a> trước, bước này chỉ chưa đầy 1 phút thôi ạ !");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } else {
             System.out.println("sai mk");
             request.setAttribute("MESSAGE", "<span><i class=\"bi text-warning bi-exclamation-triangle-fill\"></i></span> LOGIN FAIL! Sai tên tài khoản hoặc mật khẩu");
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.setAttribute("message", "");
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }

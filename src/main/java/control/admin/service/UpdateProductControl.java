@@ -12,7 +12,7 @@ import java.io.IOException;
 public class UpdateProductControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int product = Integer.parseInt(request.getParameter("product"));
+        int product = Integer.parseInt(request.getParameter("id"));
 
         ServicesDAO dao = new ServicesDAO();
         Product product1 = dao.getProductByID(product);

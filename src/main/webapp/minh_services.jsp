@@ -5,7 +5,7 @@
   Time: 4:45 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"  pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -44,6 +44,7 @@
     <!--Begin:Page CSS-->
     <link rel="stylesheet" type="text/css" href="/app-assets/css/core/menu/menu-types/horizontal-menu.css">
     <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-ecommerce.css">
+    <jsp:include page="view/header.jsp"></jsp:include>
 </head>
 <body data-spy="scroll" data-target=".navbar" style="margin-left: -300px" data-offset="20">
 <!-- Navbar Start -->
@@ -56,44 +57,9 @@
     <div class="content-wrapper container-xxl p-0">
         <div class="content-detached content-right">
             <div class="content-body">
-                <!-- E-commerce Content Section Starts -->
-                <section id="ecommerce-header">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="ecommerce-header-items">
-                                <div class="result-toggler">
-                                    <button class="navbar-toggler shop-sidebar-toggler" type="button" data-toggle="collapse">
-                                        <span class="navbar-toggler-icon d-block d-lg-none"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
-                                    </button>
-                                    <div class="search-results">16285 results found</div>
-                                </div>
-                                <div class="view-options d-flex">
-                                    <div class="btn-group dropdown-sort">
-                                        <button type="button" class="btn btn-outline-primary dropdown-toggle mr-1 waves-effect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <span class="active-sorting">Featured</span>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="javascript:void(0);">Featured</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Lowest</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Highest</a>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-icon btn-outline-primary view-btn grid-view-btn waves-effect active">
-                                            <input type="radio" name="radio_options" id="radio_option1" checked="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid font-medium-3"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                                        </label>
-                                        <label class="btn btn-icon btn-outline-primary view-btn list-view-btn waves-effect">
-                                            <input type="radio" name="radio_options" id="radio_option2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list font-medium-3"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- E-commerce Content Section Starts -->
+
+
+
 
                 <!-- background Overlay when sidebar is shown  starts-->
                 <div class="body-content-overlay"></div>
@@ -104,9 +70,17 @@
                     <div class="row mt-1">
                         <div class="col-sm-12">
                             <div class="input-group input-group-merge">
-                                <input type="text" class="form-control search-product" id="shop-search" placeholder="Search Product" aria-label="Search..." aria-describedby="shop-search">
+                                <input type="text" class="form-control search-product" id="shop-search"
+                                       placeholder="Search Product" aria-label="Search..."
+                                       aria-describedby="shop-search">
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search text-muted"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+                                    <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                                        height="14" viewBox="0 0 24 24" fill="none"
+                                                                        stroke="currentColor" stroke-width="2"
+                                                                        stroke-linecap="round" stroke-linejoin="round"
+                                                                        class="feather feather-search text-muted"><circle
+                                            cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65"
+                                                                                 y2="16.65"></line></svg></span>
                                 </div>
                             </div>
                         </div>
@@ -115,11 +89,11 @@
                 <!-- E-commerce Search Bar Ends -->
 
                 <!-- E-commerce Products Starts -->
-                <section id="ecommerce-products" class="grid-view">
-                    <c:forEach items="${c}" var="i">
+                <c:forEach items="${c}" var="i">
+                    <section id="ecommerce-products" class="list-view">
                     <div class="card ecommerce-card">
                         <div class="item-img text-center">
-                            <a href="${i.getImage()}">
+                            <a href="">
                                 <img class="img-fluid card-img-top" src="${i.getImage()}" alt="img-placeholder"></a>
                         </div>
                         <div class="card-body">
@@ -139,16 +113,16 @@
                             </div>
                             <h6 class="item-name">
                                 <a class="text-body" href="app-ecommerce-details.html">${i.getProductName()}</a>
-                                <span class="card-text item-company">By <a href="javascript:void(0)" class="company-name">Apple</a></span>
+                                 <span class="card-text item-company">Category : <a href="javascript:void(0)" class="company-name">${i.getCategoryName()}</a></span>
                             </h6>
-                            <p class="card-text item-description">
-                                    ${i.getDescription()}
+                            <p class="card-text font-medium-3 item-description">
+                                ${i.getDescription()}
                             </p>
                         </div>
                         <div class="item-options text-center">
                             <div class="item-wrapper">
                                 <div class="item-cost">
-                                    <h4 class="item-price">${i.getPrice()}</h4>
+                                    <h4 class="item-price">${i.getPrice()}$</h4>
                                 </div>
                             </div>
                             <a href="javascript:void(0)" class="btn btn-light btn-wishlist waves-effect waves-float waves-light">
@@ -163,7 +137,9 @@
                     </div>
                 </section>
                 </c:forEach>
+
                 <!-- E-commerce Products Ends -->
+
 
                 <!-- E-commerce Pagination Starts -->
                 <section id="ecommerce-pagination">
@@ -171,15 +147,19 @@
                         <div class="col-sm-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center mt-2">
-                                    <li class="page-item prev-item"><a class="page-link" href="javascript:void(0);"></a></li>
-                                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                    <li class="page-item prev-item"><a class="page-link" href="javascript:void(0);"></a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a>
+                                    </li>
                                     <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
                                     <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                                    <li class="page-item" aria-current="page"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                    <li class="page-item" aria-current="page"><a class="page-link"
+                                                                                 href="javascript:void(0);">4</a></li>
                                     <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
                                     <li class="page-item"><a class="page-link" href="javascript:void(0);">6</a></li>
                                     <li class="page-item"><a class="page-link" href="javascript:void(0);">7</a></li>
-                                    <li class="page-item next-item"><a class="page-link" href="javascript:void(0);"></a></li>
+                                    <li class="page-item next-item"><a class="page-link" href="javascript:void(0);"></a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -187,116 +167,6 @@
                 </section>
                 <!-- E-commerce Pagination Ends -->
 
-            </div>
-        </div>
-        <div class="sidebar-detached sidebar-left">
-            <div class="sidebar">
-                <!-- Ecommerce Sidebar Starts -->
-                <div class="sidebar-shop">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h6 class="filter-heading d-none d-lg-block">Filters</h6>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <!-- Price Filter starts -->
-                            <div class="multi-range-price">
-                                <h6 class="filter-title mt-0">Multi Range</h6>
-                                <ul class="list-unstyled price-range" id="price-range">
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceAll" name="price-range" class="custom-control-input" checked="">
-                                            <label class="custom-control-label" for="priceAll">All</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange1" name="price-range" class="custom-control-input">
-                                            <label class="custom-control-label" for="priceRange1">&lt;=$10</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange2" name="price-range" class="custom-control-input">
-                                            <label class="custom-control-label" for="priceRange2">$10 - $100</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceARange3" name="price-range" class="custom-control-input">
-                                            <label class="custom-control-label" for="priceARange3">$100 - $500</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="priceRange4" name="price-range" class="custom-control-input">
-                                            <label class="custom-control-label" for="priceRange4">&gt;= $500</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Price Filter ends -->
-
-
-                            <!-- Categories Starts -->
-                            <div id="product-categories">
-                                <h6 class="filter-title">Categories</h6>
-                                <ul class="list-unstyled categories-list">
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category1" name="category-filter" class="custom-control-input" checked="">
-                                            <label class="custom-control-label" for="category1">Appliances</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="category2" name="category-filter" class="custom-control-input">
-                                            <label class="custom-control-label" for="category2">Audio</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Categories Ends -->
-
-                            <!-- Brands starts -->
-                            <div class="brands">
-                                <h6 class="filter-title">Brands</h6>
-                                <ul class="list-unstyled brand-list">
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="productBrand5" checked="">
-                                            <label class="custom-control-label" for="productBrand5">Apple</label>
-                                        </div>
-                                        <span>442</span>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="productBrand6">
-                                            <label class="custom-control-label" for="productBrand6">GE</label>
-                                        </div>
-                                        <span>394</span>
-                                    </li>
-                                    <li>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="productBrand7">
-                                            <label class="custom-control-label" for="productBrand7">Sony</label>
-                                        </div>
-                                        <span>350</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- Brand ends -->
-
-                            <!-- Clear Filters Starts -->
-                            <div id="clear-filters">
-                                <button type="button" class="btn btn-block btn-primary waves-effect waves-float waves-light">Clear All Filters</button>
-                            </div>
-                            <!-- Clear Filters Ends -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Ecommerce Sidebar Ends -->
 
             </div>
         </div>

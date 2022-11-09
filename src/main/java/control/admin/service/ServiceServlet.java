@@ -49,11 +49,11 @@ public class ServiceServlet extends HttpServlet {
         if (check_status){
             msg = "<div class=\"alert alert-success\" role=\"alert\">Thêm mới dịch vụ thành công</div>";
             request.setAttribute("MESSAGE",msg );
-            request.getRequestDispatcher("/service").forward(request, response);
+            response.sendRedirect("service");
         } else {
             msg = "<div class=\"alert alert-danger\" role=\"alert\">Có lỗi gì đó</div>";
             request.setAttribute("MESSAGE", msg);
-            request.getRequestDispatcher("/service").forward(request, response);
+            response.sendRedirect("service");
         }
     }
 }

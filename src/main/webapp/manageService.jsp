@@ -345,37 +345,37 @@
         }
     })
 </script>
-<script>
-    var app = new Vue({
-        el: "#app",
-        data: {
-            file: '',
-            cate_data: []
-        },
-        created() {
-            this.get_cate_data()
-        },
-        methods: {
-            get_cate_data() {
-                var self = this
-                $.ajax({
-                    url: 'get_category',
-                    type: 'get',
-                    success: function (res) {
-                        self.cate_data = res
-                    }
-                })
-            },
-            onChange: function (e) {
-                $("#preview_image").removeAttr('hidden');
-                this.file = e.target.files[0];
-                console.log(this.file);
-                var img = document.getElementById('preview_image');
-                img.src = URL.createObjectURL(this.file);
-            },
-        }
-    })
-</script>
+<%--<script>--%>
+<%--    var app = new Vue({--%>
+<%--        el: "#app",--%>
+<%--        data: {--%>
+<%--            file: '',--%>
+<%--            cate_data: []--%>
+<%--        },--%>
+<%--        created() {--%>
+<%--            this.get_cate_data()--%>
+<%--        },--%>
+<%--        methods: {--%>
+<%--            get_cate_data() {--%>
+<%--                var self = this--%>
+<%--                $.ajax({--%>
+<%--                    url: 'get_category',--%>
+<%--                    type: 'get',--%>
+<%--                    success: function (res) {--%>
+<%--                        self.cate_data = res--%>
+<%--                    }--%>
+<%--                })--%>
+<%--            },--%>
+<%--            onChange: function (e) {--%>
+<%--                $("#preview_image").removeAttr('hidden');--%>
+<%--                this.file = e.target.files[0];--%>
+<%--                console.log(this.file);--%>
+<%--                var img = document.getElementById('preview_image');--%>
+<%--                img.src = URL.createObjectURL(this.file);--%>
+<%--            },--%>
+<%--        }--%>
+<%--    })--%>
+<%--</script>--%>
 <%--Kết thúc script--%>
 
 </body>

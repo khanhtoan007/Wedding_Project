@@ -27,7 +27,7 @@
                 <a class="nav-link active" href="LoadServlet">Người dùng</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="Developing.jsp">Blog</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="service">Sản phẩm</a>
@@ -110,7 +110,7 @@
                     <div class="modal-body">
                         <div>
                         </div>
-                        <form action="LoadServlet" method="post">
+                        <form action="AddUser" method="post">
                             <div class="row m-1">
                                 <label for="name">Tên tài khoản</label>
                                 <input type="text" id="name" name="username" class="form-control" placeholder="name">

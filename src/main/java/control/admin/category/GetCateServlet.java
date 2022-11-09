@@ -8,11 +8,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "GetServlet", value = "/get_category")
-public class GetServlet extends HttpServlet {
+@WebServlet(name="get_category", value = "/get_category")
+public class GetCateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Category> categories = new CategoryDAO().getCategoryList();

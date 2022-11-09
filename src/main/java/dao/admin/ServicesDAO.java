@@ -41,6 +41,31 @@ public class ServicesDAO {
         return list;
     }
 
+    public List<Product> getProductListNametoCateID() {
+        List<Product> list = new ArrayList<>();
+        String query = "SELECT Product.*, category.CategoryName from Product join category on Product.CategoryID = category.CategoryID";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Product(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getBoolean(7),
+                        rs.getString(8),
+                        rs.getString(9)
+                ));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
+
     public Product getProductByID(int id) {
         Product product = new Product();
         String query = "SELECT * from PRODUCT where ProductID = ?";
@@ -241,6 +266,6 @@ public class ServicesDAO {
 //        for (Product o : list) {
 //            System.out.println(o);
 //        }
-        System.out.println(dao.deleteProduct(4));
+        System.out.println(dao.getProductListNametoCateID());
     }
 }

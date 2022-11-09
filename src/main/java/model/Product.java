@@ -5,6 +5,7 @@ public class Product{
     private int productID;
     private String productName;
     private int categoryID;
+    String categoryName;
     private int price;
     private int quantity;
     private String image;
@@ -22,6 +23,21 @@ public class Product{
         this.description = description;
     }
 
+    public Product( int categoryID) {
+        this.categoryID = categoryID;
+    }
+
+    public Product(int productID, String productName,int quantity, int categoryID, int price,  String image, boolean status, String description, String categoryName) {
+        this.productID = productID;
+        this.productName = productName;
+        this.categoryID = categoryID;
+        this.categoryName = categoryName;
+        this.price = price;
+        this.quantity = quantity;
+        this.image = image;
+        this.status = status;
+        this.description = description;
+    }
     public Product(String productName, int categoryID, int quantity, String image, boolean status, String description) {
         this.productName = productName;
         this.categoryID = categoryID;
@@ -32,19 +48,6 @@ public class Product{
     }
     public Product(){
 
-    }
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productID=" + productID +
-                ", productName='" + productName + '\'' +
-                ", categoryID=" + categoryID +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", image='" + image + '\'' +
-                ", status=" + status +
-                ", description='" + description + '\'' +
-                '}';
     }
 
     public int getProductID() {
@@ -110,4 +113,28 @@ public class Product{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productID=" + productID +
+                ", productName='" + productName + '\'' +
+                ", categoryID=" + categoryID +
+                ", categoryName='" + categoryName + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", image='" + image + '\'' +
+                ", status=" + status +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
+
 }

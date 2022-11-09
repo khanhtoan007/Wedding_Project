@@ -22,9 +22,8 @@
             <a href="about.jsp" class="nav-item nav-link text-center">Về chúng tôi</a>
             <a href="services.jsp" class="nav-item nav-link text-center">Dịch vụ & sản phẩm</a>
             <a href="contact.jsp" class="nav-item nav-link text-center">Đặt lịch</a>
-            <a href="memberinfo.jsp" class="nav-item nav-link text-center">Thông tin cá nhân</a>
             <a href="RegisterServlet" class="bg-gradient-secondary nav-item nav-link text-center">Đăng ký</a>
-            <a href="login.jsp" class="bg-gradient-success nav-item nav-link text-center">Đăng nhập</a>
+            <a href="LoginServlet" class="bg-gradient-success nav-item nav-link text-center">Đăng nhập</a>
         </div>
     </div>
 </nav>

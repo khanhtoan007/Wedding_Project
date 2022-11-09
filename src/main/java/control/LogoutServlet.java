@@ -24,8 +24,9 @@ public class LogoutServlet extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             HttpSession session = request.getSession();
             session.removeAttribute("NAME");
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("LoginServlet");
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

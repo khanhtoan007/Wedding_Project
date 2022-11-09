@@ -183,9 +183,31 @@ public class AccountDAO {
         }
         return false;
     }
+    public boolean changePassword(String hash, String password){
+        String query = "select * from NGUOIDUNG where hash_string = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, hash);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                String sql_update_mail = "update NGUOIDUNG set password = ? where hash_string = ?";
+                conn = new DBContext().getConnection();
+                ps = conn.prepareStatement(sql_update_mail);
+                ps.setString(1, password);
+                ps.setString(2, hash);
+                ps.executeUpdate();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         AccountDAO dao = new AccountDAO();
+
         System.out.println(dao.activeMail("071d4160-8d77-448d-b5d2-127fc2d9085f"));
     }
 }

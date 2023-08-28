@@ -45,13 +45,7 @@
 <body>
 
 
-
-<form action="active" method="post">
-    <input type="text" name="hash" placeholder="mã của bạn">
-    <button>submit</button>
-</form>
-
-<div class="app-content content ">
+<div class="app-content ">
     <div class="content-overlay"></div>
     <div class="header-navbar-shadow"></div>
     <div class="content-wrapper">
@@ -60,7 +54,7 @@
         <div class="content-body">
             <div class="auth-wrapper auth-v1 px-2">
                 <div class="auth-inner py-2">
-                    <!-- Reset Password v1 -->
+                    <!-- Send Mail -->
                     <div class="card mb-0">
                         <div class="card-body">
                             <a href="javascript:void(0);" class="brand-logo">
@@ -93,10 +87,9 @@
                             <h4 class="card-title mb-1">Activate Email</h4>
                             <p class="card-text mb-2">Enter code to activate email</p>
 
-                            <form class="auth-forgot-password-form mt-2" action="active" method="POST" novalidate="novalidate">
+                            <form class="auth-forgot-password-form mt-2" action="active" method="post" novalidate="novalidate">
                                 <div class="form-group">
-                                    <label for="forgot-password-email" class="form-label">CODE</label>
-                                    <input type="text" class="form-control" id="forgot-password-email" name="hash" aria-describedby="forgot-password-email" tabindex="1" autofocus="">
+                                    <input type="text" class="form-control" placeholder="Input code" name="hash" tabindex="1" autofocus="">
                                 </div>
                                 <button class="btn btn-primary btn-block waves-effect waves-float waves-light" tabindex="2">Activate</button>
                             </form>

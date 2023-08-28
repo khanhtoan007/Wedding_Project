@@ -35,6 +35,77 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
     <!-- END: Custom CSS-->
+    <style>
+        .open-button {
+            background-color: #E47A2E;
+            color: white;
+            margin-bottom: 100px;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 1;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 80px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 150px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        /* When the textarea gets focus, do something */
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: #818491;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover, .open-button:hover {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,6 +125,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="service">Sản phẩm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="home.jsp">Về trang chủ</a>
             </li>
         </ul>
     </div>
@@ -183,6 +257,24 @@
         <jsp:include page="view/chatBox.jsp"></jsp:include>
     </div>
 </div>
+<div class="chat-popup" id="myForm">
+    <form action="" class="form-container justify-content-center text-center">
+        <h4 class="text-center">Chat với Khách Hàng</h4>
+        <input id="textMessage" type="text" class="col-sm-12 mb-2"/>
+        <input onclick="sendMessage()" value="Gửi" type="button" class="btn-primary col-md-4"/>
+        <input onclick="sendMessage()" value="Kết nối" type="button" class="btn-dark col-md-4"/> <br/><br/>
+        <textarea id="textAreaMessage" rows="10" cols="40" disabled></textarea>
+        <button type="button" class="btn cancel" onclick="closeForm()">Đóng chat</button>
+    </form>
+</div>
+<button class="open-button" onclick="openForm()" id="myButton">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+</button>
+
+<jsp:include page="view/chatBox.jsp"></jsp:include>
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"

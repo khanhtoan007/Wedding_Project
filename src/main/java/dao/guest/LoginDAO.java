@@ -7,8 +7,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class LoginDAO {
@@ -97,6 +95,54 @@ public class LoginDAO {
                         rs.getString(8),
                         rs.getString(9)
                         );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+    public void addEmailToAccount(String email, String role){
+        String query = "select * from NGUOIDUNG where email = ?";
+        User user = new User();
+        try{
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                String addEmail = "update NGUOIDUNG set email = ? where role = ?";
+                conn = new DBContext().getConnection();
+                ps = conn.prepareStatement(addEmail);
+                ps.setString(1, email);
+                ps.setString(2, role);
+                ps.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public User getUserByEmail(String email){
+        String query = "select * from NGUOIDUNG where email = ?";
+        User user = new User();
+        try{
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                user = new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getBoolean(7),
+                        rs.getString(8),
+                        rs.getString(9)
+                );
             }
         } catch (Exception e) {
             e.printStackTrace();

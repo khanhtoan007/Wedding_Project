@@ -13,6 +13,7 @@ import java.util.List;
 public class LoadProduct extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
         List<Product> list = new ServicesDAO().getProductList();
         request.setAttribute("list", list);
         request.getRequestDispatcher("adminManageServices.jsp").forward(request, response);

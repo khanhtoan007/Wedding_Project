@@ -98,22 +98,60 @@
             <h1 class="font-secondary display-4">Our Love Story</h1>
             <i class="far fa-heart text-dark"></i>
         </div>
-        <c:forEach items="list" var="i">
         <div class="container timeline position-relative p-0">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-right">
-                        <img class="img-fluid mr-md-3" src="${i.getImage()}" alt="">
-                    </div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
-                            <h4 class="mb-2">${i.getLabel()}</h4>
-                            <p class="text-uppercase mb-2">${i.getLabel()}</p>
-                            <p class="m-0">${i.getSecondLabel()}</p>
-                        </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <img class="img-fluid mr-md-3" src="img/story-1.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                        <h4 class="mb-2">Brilliant Wedding</h4>
+                        <p class="text-uppercase mb-2">01 Jan 2022</p>
+                        <p class="m-0">Brilliant Wedding là hệ thống cưới ảnh đặt mang lại nhiều phong cách khác nhau về váy cưới. Khác với váy cưới thông thường, váy cưới của hệ thống chúng tôi là sự kết hợp của tinh tế với mỹ thuật. Không chỉ là những góc nhìn thực tế hoặc những thứ xuất hiện ngay trước máy ảnh, phong cách này còn mang đến những thông điệp ý nghĩa mà cô dâu và chú rể muốn truyền tải để gợi lên nhiều cung bậc cảm xúc cho người nhìn.</p>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                        <h4 class="mb-2">Váy Cưới của Brilliant Wedding</h4>
+                        <p class="text-uppercase mb-2">01 Oct 2022</p>
+                        <p class="m-0">Các váy cưới của Brilliant Wedding đều là những bậc thầy trong nghệ thuật chụp ảnh cưới. Với kỹ năng bắt hình cực tốt, chúng tôi sẽ giúp bạn thu trọn mọi khoảnh khắc đẹp của tình yêu. Không chỉ vậy, đội ngũ nhiếp ảnh gia ROSÉ Wedding cũng vô cùng linh hoạt trong việc chỉnh dáng, gợi ý dáng chụp cho cô dâu chú rể. Qua đó mang đến những bức ảnh ấn tượng và đẳng cấp.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <img class="img-fluid ml-md-3" src="img/story-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <img class="img-fluid mr-md-3" src="img/story-3.jpg" alt="">
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 ml-md-3">
+                        <h4 class="mb-2">Proposal</h4>
+                        <p class="text-uppercase mb-2">01 Jan 2050</p>
+                        <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet
+                            sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd
+                            stet amet est dolor elitr.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="h-100 d-flex flex-column justify-content-center bg-secondary p-4 mr-md-3">
+                        <h4 class="mb-2">Enagagement</h4>
+                        <p class="text-uppercase mb-2">01 Jan 2050</p>
+                        <p class="m-0">Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem at amet
+                            sea, eos tempor rebum, labore amet ipsum sea lorem, stet rebum eirmod amet. Kasd clita kasd
+                            stet amet est dolor elitr.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-md-left">
+                    <img class="img-fluid ml-md-3" src="img/story-4.jpg" alt="">
+                </div>
+            </div>
         </div>
-        </c:forEach>
     </div>
 </div>
 <!-- Story End -->

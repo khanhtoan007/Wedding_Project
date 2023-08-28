@@ -10,12 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f24ff1-ddba-4ed2-baf2-720118003374" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Wedding_Project2_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Wedding_Project2_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wedding_project2/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wedding_project2/Servlet1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/admin/service/LoadProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/admin/service/LoadProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/guest/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/guest/LoginDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/function/login/google/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/function/login/google/common/Constants.java" afterDir="false" />
@@ -344,6 +340,7 @@
       <workItem from="1692935218947" duration="3184000" />
       <workItem from="1692960323345" duration="1916000" />
       <workItem from="1693115199188" duration="664000" />
+      <workItem from="1693219097527" duration="367000" />
     </task>
     <servers />
   </component>

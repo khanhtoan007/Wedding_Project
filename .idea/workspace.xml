@@ -10,6 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4f24ff1-ddba-4ed2-baf2-720118003374" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wedding_project2/HelloServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wedding_project2/Servlet1.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/admin/service/LoadProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/admin/service/LoadProduct.java" afterDir="false" />
@@ -17,9 +19,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/function/login/google/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/function/login/google/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/function/login/google/servlet/LoginGoogleServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/function/login/google/servlet/LoginGoogleServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/active.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/active.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/adminManageContents.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminManageContents.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminManageCustomer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminManageCustomer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/adminManageServices.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/adminManageServices.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/minh_services.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/minh_services.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/navbar.jsp" afterDir="false" />
     </list>
     <list id="e5366cde-5784-4e61-9d2f-69d726c94f3c" name="Changes by dai tuong cuong quoc" comment="" />
     <list id="e1bf15f5-1462-4531-9502-d4e1c48c0c4e" name="Changes by Hoàng tử Dubai" comment="">
@@ -46,6 +50,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/webapp/adminManageContents.jsp">
+      <ranges>
+        <range start1="36" end1="36" start2="36" end2="38" changelist="c4f24ff1-ddba-4ed2-baf2-720118003374" />
+        <range start1="37" end1="37" start2="39" end2="110" changelist="e1bf15f5-1462-4531-9502-d4e1c48c0c4e" />
+        <range start1="47" end1="48" start2="120" end2="121" changelist="c4f24ff1-ddba-4ed2-baf2-720118003374" />
+        <range start1="56" end1="56" start2="129" end2="132" changelist="e1bf15f5-1462-4531-9502-d4e1c48c0c4e" />
+        <range start1="185" end1="185" start2="261" end2="279" changelist="e1bf15f5-1462-4531-9502-d4e1c48c0c4e" />
+      </ranges>
+    </file>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -340,7 +355,9 @@
       <workItem from="1692935218947" duration="3184000" />
       <workItem from="1692960323345" duration="1916000" />
       <workItem from="1693115199188" duration="664000" />
-      <workItem from="1693219097527" duration="367000" />
+      <workItem from="1693219097527" duration="2402000" />
+      <workItem from="1693227018676" duration="1250000" />
+      <workItem from="1693235579323" duration="3102000" />
     </task>
     <servers />
   </component>

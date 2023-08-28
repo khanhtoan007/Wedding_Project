@@ -15,7 +15,30 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Manage Customer</title>
     <link rel="shortcut icon" type="image/x-icon" href="../../../app-assets/images/ico/relationship.png">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/vendors/css/vendors.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/themes/semi-dark-layout.css">
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="../../../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/plugins/forms/form-validation.css">
+    <link rel="stylesheet" type="text/css" href="../../../app-assets/css/pages/page-auth.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+
 
 
     <style>
@@ -92,13 +115,13 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Trang quản lý</a>
+    <a class="navbar-brand font-weight-bolder" href="home.jsp"><i class="icon-home">Trang chủ</i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav font-large-1">
             <li class="nav-item">
                 <a class="nav-link active" href="LoadServlet">Người dùng</a>
             </li>
@@ -109,7 +132,7 @@
                 <a class="nav-link" href="service">Sản phẩm</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="home.jsp">Về trang chủ</a>
+                <a class="nav-link" href="#">Lịch hẹn</a>
             </li>
         </ul>
     </div>
@@ -121,22 +144,22 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-12 text-center mb-3">
+    <div class="col-md-12 text-center mb-3 mt-5">
 <%--        <c:if action="${search}">--%>
 <%--            <h2>ket qua tim kiem</h2>--%>
 <%--        </c:if>--%>
 <%--        <c:if action !="${search}">--%>
 <%--            <h2>Danh sách người dùng</h2>--%>
 <%--        </c:if>--%>
-        <h2>${action.equals("search") ? "ket qua tim kiem" : "Danh sách người dùng"}</h2>
+<%--        <h2>${action.equals("search") ? "ket qua tim kiem" : "Danh sách người dùng"}</h2>--%>
 
-    </div>
-    <div class="row justify-content-center align-items-center">
-        <form action="SearchUserServlet" method="post" class="form-inline">
-            <input class="form-control" name="fullname" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-    </div>
+<%--    </div>--%>
+<%--    <div class="row justify-content-center align-items-center">--%>
+<%--        <form action="SearchUserServlet" method="post" class="form-inline">--%>
+<%--            <input class="form-control" name="fullname" type="search" placeholder="Điền vào tên người dùng.." aria-label="Search">--%>
+<%--            <button class="btn btn-outline-success" type="submit">Search</button>--%>
+<%--        </form>--%>
+<%--    </div>--%>
     <table id="myTable" class="display">
         <thead>
         <tr>
@@ -147,7 +170,7 @@
             <th>Tel</th>
             <th>Confirm Email</th>
             <th>Role</th>
-            <th colspan="2">action</th>
+            <th>action</th>
         </tr>
         </thead>
         <tbody>
@@ -239,12 +262,14 @@
 </button>
 <jsp:include page="view/chatBox.jsp"></jsp:include>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+
 <script src="../../../app-assets/vendors/js/vendors.min.js"></script>
 <script src="../../../app-assets/js/core/app-menu.js"></script>
 <script src="../../../app-assets/js/core/app.js"></script>
 <script src="../../../app-assets/js/scripts/forms/form-tooltip-valid.js"></script>
+
 <script>
     let table = new DataTable('#myTable');
     $(document).ready( function (e) {

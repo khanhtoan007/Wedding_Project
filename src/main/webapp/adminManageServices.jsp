@@ -31,6 +31,8 @@
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+
     <!-- END: Custom CSS-->
     <style>
         .open-button {
@@ -112,7 +114,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav font-large-1">
             <li class="nav-item">
                 <a class="nav-link" href="LoadServlet">Người dùng</a>
             </li>

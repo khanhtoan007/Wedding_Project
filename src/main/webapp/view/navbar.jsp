@@ -24,6 +24,7 @@
             <a href="user_service" class="nav-item nav-link text-center">Dịch vụ & sản phẩm</a>
             <a href="LoadUserContact" class="nav-item nav-link text-center">Đặt lịch</a>
             <c:if test="${sessionScope.NAME != null}" >
+                <a href="LoadServlet" class="nav-item nav-link text-center">Về Trang Quản Lý</a>
                 <a href="LogoutServlet" class="nav-item nav-link text-center">Đăng xuất</a>
                 <a  class="nav-item nav-link text-center">Welcome, ${sessionScope.NAME}</a>
             </c:if>
